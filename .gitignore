@@ -1,0 +1,19 @@
+# Secrets
+.env
+.env.example
+
+# Runtime data (database, backups, lock, logs)
+data/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Claude Code local settings
+.claude/settings.local.json
+
+# Transient lesson handoff
+learning/outbox/*
+!learning/outbox/.gitkeep
