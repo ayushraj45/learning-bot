@@ -1,9 +1,9 @@
 # Progress
 
 ## Pointers
-- Last track taught: ai
-- AI development: up to — A1 (tokens done; next: sampling/temperature)
-- Data engineering: up to — B1 (start) — NEXT track to teach
+- Last track taught: data
+- AI development: up to — A1 (tokens done; next: sampling/temperature) — NEXT track to teach
+- Data engineering: up to — B1 (joins done; next: GROUP BY/aggregation, subqueries vs CTEs)
 
 ## Module levels
 Levels: new | seen | solid | mastered
@@ -21,7 +21,7 @@ Levels: new | seen | solid | mastered
 - A10 Python (differences from JS only): new
 
 ### Data engineering
-- B1 SQL for interviews: new
+- B1 SQL for interviews: seen
 - B2 Data modelling: new
 - B3 Pipelines: new
 - B4 Spark: new
@@ -32,7 +32,8 @@ Levels: new | seen | solid | mastered
 - B9 Data system design: new
 
 ## Lesson log
-- 2026-11-04 ai: A1 tokens and context window
+- 2026-11-04 ai: A1 tokens and context window (Ayush asked what "parameters" means; clarified params vs tokens vs context window)
+- 2026-11-05 data: B1 LEFT vs INNER JOIN, WHERE-vs-ON trap
 
 ## Pacing notes
 (reasons for skipping, reordering or revisiting)
