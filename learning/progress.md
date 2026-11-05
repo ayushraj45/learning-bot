@@ -36,6 +36,7 @@ Levels: new | seen | solid | mastered
 - 2026-11-05 data: B1 LEFT vs INNER JOIN, WHERE-vs-ON trap
 - 2026-11-05 ai: A1 temperature, top-p, greedy, temp 0 not fully deterministic
 - 2026-11-05 data: B1 GROUP BY, WHERE vs HAVING, COUNT variants; wrote SQL coding challenge (HAVING/aggregation)
+- 2026-11-05 ai: DRILL on context window overflow (A1); awaiting grade. Pointers unchanged (next ai lesson: prompting patterns)
 
 ## Pacing notes
 (reasons for skipping, reordering or revisiting)
