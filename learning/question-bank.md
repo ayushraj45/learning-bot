@@ -4,3 +4,4 @@ Interview questions already asked or taught, so none repeat. Format: `- <questio
 
 - What's a token and why does it matter for building LLM apps? (ai, A1) — 2026-11-04
 - Why did my LEFT JOIN drop rows / find customers with no orders? (data, B1) — 2026-11-05
+- What does temperature do, and what would you set it to for extraction vs creative tasks? (ai, A1) — 2026-11-05

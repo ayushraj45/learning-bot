@@ -1,9 +1,9 @@
 # Progress
 
 ## Pointers
-- Last track taught: data
-- AI development: up to — A1 (tokens done; next: sampling/temperature) — NEXT track to teach
-- Data engineering: up to — B1 (joins done; next: GROUP BY/aggregation, subqueries vs CTEs)
+- Last track taught: ai
+- AI development: up to — A1 (tokens, temperature/top-p done; next: prompting patterns)
+- Data engineering: up to — B1 (joins done; next: GROUP BY/aggregation, subqueries vs CTEs) — NEXT track to teach
 
 ## Module levels
 Levels: new | seen | solid | mastered
@@ -34,6 +34,7 @@ Levels: new | seen | solid | mastered
 ## Lesson log
 - 2026-11-04 ai: A1 tokens and context window (Ayush asked what "parameters" means; clarified params vs tokens vs context window)
 - 2026-11-05 data: B1 LEFT vs INNER JOIN, WHERE-vs-ON trap
+- 2026-11-05 ai: A1 temperature, top-p, greedy, temp 0 not fully deterministic
 
 ## Pacing notes
 (reasons for skipping, reordering or revisiting)
