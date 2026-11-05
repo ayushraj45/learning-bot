@@ -58,10 +58,12 @@ class TelegramClient:
         self._base = f"{API}/bot{token}"
         self._http = http or httpx.Client(timeout=httpx.Timeout(10.0))
 
-    def _call(self, method: str, timeout: float | None = None, **params):
+    def _call(self, method: str, http_timeout: float | None = None, **params):
+        # `http_timeout` is how long httpx waits; a `timeout` key in params is
+        # Telegram's own long-poll length and goes to the API in the JSON body.
         kwargs = {"json": params}
-        if timeout is not None:
-            kwargs["timeout"] = timeout
+        if http_timeout is not None:
+            kwargs["timeout"] = http_timeout
         resp = self._http.post(f"{self._base}/{method}", **kwargs)
         try:
             data = resp.json()
@@ -80,7 +82,7 @@ class TelegramClient:
         params: dict = {"timeout": timeout, "allowed_updates": ["message"]}
         if offset:
             params["offset"] = offset
-        return self._call("getUpdates", timeout=timeout + 15, **params)
+        return self._call("getUpdates", http_timeout=timeout + 15, **params)
 
     def send_message(
         self, chat_id: int, text: str, reply_to_message_id: int | None = None
