@@ -9,4 +9,5 @@ Interview questions already asked or taught, so none repeat. Format: `- <questio
 - Drill: chatbot hits "context length exceeded" after ~30 messages; why, and 2-3 fixes with trade-offs? (ai, A1) — 2026-11-05 — graded 3/5
 - When would you use few-shot vs just a better instruction? (ai, A1) — 2026-11-06
 - CTE vs subquery: when would you use each, and what's a correlated subquery? (data, B1) — 2026-11-06
+- How would you improve an LLM that gets multi-step problems wrong? (chain-of-thought) (ai, A1) — 2026-11-06
 - Coding: customers with 3+ paid orders in 2026 and spend over £300 (SQL, B1) — 2026-11-05
