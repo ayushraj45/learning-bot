@@ -1,9 +1,9 @@
 # Progress
 
 ## Pointers
-- Last track taught: ai
-- AI development: up to — A1 (tokens, temperature/top-p, few-shot, chain-of-thought done; next: system vs user prompts, hallucination)
-- Data engineering: up to — B1 (joins, GROUP BY/HAVING, subqueries/CTEs done; next: window functions) — NEXT track to teach
+- Last track taught: data
+- AI development: up to — A1 (tokens, temperature/top-p, few-shot, chain-of-thought done; next: system vs user prompts, hallucination) — NEXT track to teach
+- Data engineering: up to — B1 (joins, GROUP BY/HAVING, subqueries/CTEs, ROW_NUMBER/PARTITION BY done; next: RANK/DENSE_RANK, LAG/LEAD, running totals)
 
 ## Module levels
 Levels: new | seen | solid | mastered
@@ -41,6 +41,7 @@ Levels: new | seen | solid | mastered
 - 2026-11-06 ai: A1 few-shot prompting (zero-shot vs few-shot, token cost, varied examples)
 - 2026-11-06 data: B1 subqueries vs CTEs, correlated subqueries
 - 2026-11-06 ai: A1 chain-of-thought (step-by-step reasoning, cost, reasoning models)
+- 2026-11-06 data: B1 window functions intro (ROW_NUMBER, PARTITION BY, top-N per group); wrote SQL coding challenge (top 2 per customer)
 
 ## Pacing notes
 (reasons for skipping, reordering or revisiting)
