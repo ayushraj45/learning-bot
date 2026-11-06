@@ -42,6 +42,7 @@ Levels: new | seen | solid | mastered
 - 2026-11-06 data: B1 subqueries vs CTEs, correlated subqueries
 - 2026-11-06 ai: A1 chain-of-thought (step-by-step reasoning, cost, reasoning models)
 - 2026-11-06 data: B1 window functions intro (ROW_NUMBER, PARTITION BY, top-N per group); wrote SQL coding challenge (top 2 per customer)
+- 2026-11-06 data: DRILL on window AVG OVER vs GROUP BY/CTE (B1); awaiting grade. Pointers unchanged (next data lesson: RANK/DENSE_RANK)
 
 ## Pacing notes
 (reasons for skipping, reordering or revisiting)
