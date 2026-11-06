@@ -68,6 +68,15 @@ Each module in `progress.md` has a level: `new`, `seen`, `solid`, `mastered`.
 
 - Few questions on a module and two drill grades of 4/5 or better → mark it `solid`, skip its remaining basic lessons, and go to harder material or the next module.
 - Many questions on a module, or a drill graded 2/5 or lower → add the concept to `weak-spots.md` and revisit it in a later lesson, explained differently.
+### Reactions (explicit feedback from Ayush)
+
+The log export has a "Reactions" section: Ayush's latest emoji reaction on a lesson, with its meaning. The meanings are defined in `bot/reactions.py` and printed in the export, so trust the export text if it ever differs from this list. Reactions are about **depth on that concept**, never about how many lessons he gets.
+
+- 👍 = he got it. Raise the depth or difficulty on that concept and its domain: next lesson there goes further (e.g. after window-function basics, move to frames, RANK vs DENSE_RANK edge cases, performance). Treat it as a strong signal toward `solid`, and stronger still together with good drill grades.
+- 👎 = he did not get it. Add the concept to `weak-spots.md`, then revisit it soon in a simpler way: a different analogy, smaller step, simpler example. Do not move on to harder material in that area until a later 👍, a good drill grade, or an easy follow-up shows he has it.
+- "reaction removed" = no signal; ignore it. If a lesson's reaction changed, only the latest one counts.
+- Reactions beat guesses from question counts, but a drill grade can still overrule an old 👍. Note the reason in `progress.md` when a reaction changes the plan.
+
 - You may reorder or trim `curriculum.md` as needed. Note the reason in `progress.md`. The curriculum is a living document, not a fixed list.
 - Early on, assume nothing is `solid`. Start at a moderate level and let his responses set the pace.
 

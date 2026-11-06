@@ -35,6 +35,15 @@ CREATE TABLE IF NOT EXISTS telegram_refs (
     lesson_id INTEGER NOT NULL REFERENCES lessons(id)
 );
 
+-- Latest reaction per lesson. reaction is NULL when the reaction was removed
+-- (or replaced by an emoji with no meaning). seq lets the log export find changes.
+CREATE TABLE IF NOT EXISTS feedback (
+    lesson_id INTEGER PRIMARY KEY REFERENCES lessons(id),
+    reaction TEXT,
+    seq INTEGER NOT NULL,
+    updated_at TEXT NOT NULL
+);
+
 CREATE TABLE IF NOT EXISTS state (
     key TEXT PRIMARY KEY,
     value TEXT NOT NULL
@@ -155,6 +164,28 @@ def find_lesson_id_by_message(conn: sqlite3.Connection, telegram_message_id: int
         (telegram_message_id,),
     ).fetchone()
     return row["lesson_id"] if row else None
+
+
+# ---- feedback (reactions) ----------------------------------------------------
+
+def set_feedback(conn: sqlite3.Connection, lesson_id: int, reaction: str | None) -> None:
+    """Record the latest reaction for a lesson. None means the reaction was removed."""
+    with conn:
+        conn.execute(
+            "INSERT INTO feedback (lesson_id, reaction, seq, updated_at) "
+            "VALUES (?, ?, (SELECT COALESCE(MAX(seq), 0) + 1 FROM feedback), ?) "
+            "ON CONFLICT(lesson_id) DO UPDATE SET "
+            "reaction = excluded.reaction, seq = excluded.seq, updated_at = excluded.updated_at",
+            (lesson_id, reaction, utc_now()),
+        )
+
+
+def feedback_since(conn: sqlite3.Connection, seq: int) -> list[sqlite3.Row]:
+    return conn.execute(
+        "SELECT f.*, l.topic, l.track, l.kind FROM feedback f JOIN lessons l ON l.id = f.lesson_id "
+        "WHERE f.seq > ? ORDER BY f.seq",
+        (seq,),
+    ).fetchall()
 
 
 # ---- small key/value state --------------------------------------------------

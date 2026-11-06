@@ -133,6 +133,21 @@ def test_export_is_incremental_and_includes_grades(tmp_path):
     assert "RANK skips after ties" not in second.split("# Export")[-1]  # old content not repeated
 
 
+def test_export_includes_reactions_once_and_null_means_no_signal(tmp_path):
+    conn = db.connect(tmp_path / "t.db")
+    logs = tmp_path / "logs"
+    lesson = db.add_lesson(conn, track="data", topic="Window functions", text="t", telegram_message_ids=[1])
+    db.set_feedback(conn, lesson, "👍")
+    text = export_logs.export(conn, logs).read_text(encoding="utf-8")
+    assert "Window functions" in text and "👍 = got it" in text
+
+    assert export_logs.export(conn, logs) is None  # reaction already exported
+
+    db.set_feedback(conn, lesson, None)  # reaction removed
+    second = export_logs.export(conn, logs).read_text(encoding="utf-8").split("# Export")[-1]
+    assert "reaction removed" in second and "👍" not in second
+
+
 # ---- alerts ----------------------------------------------------------------
 
 def test_expired_login_gets_a_helpful_message():

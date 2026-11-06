@@ -79,7 +79,7 @@ class TelegramClient:
     def get_updates(self, offset: int | None = None, timeout: int = 30) -> list[dict]:
         """Long poll: Telegram holds the request open until a message arrives
         or `timeout` seconds pass."""
-        params: dict = {"timeout": timeout, "allowed_updates": ["message"]}
+        params: dict = {"timeout": timeout, "allowed_updates": ["message", "message_reaction"]}
         if offset:
             params["offset"] = offset
         return self._call("getUpdates", http_timeout=timeout + 15, **params)

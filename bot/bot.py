@@ -14,7 +14,7 @@ from logging.handlers import RotatingFileHandler
 
 import httpx
 
-from . import db, qa
+from . import db, qa, reactions
 from .config import Config, ConfigError, ROOT, load_config
 from .telegram_api import TelegramClient, TelegramError
 
@@ -43,7 +43,22 @@ def resolve_lesson(conn, message: dict):
     return db.latest_lesson(conn)
 
 
+def handle_reaction(reaction: dict, cfg: Config, conn) -> None:
+    """Store a 👍/👎-style reaction against the lesson the reacted-to message belongs to."""
+    if reaction.get("chat", {}).get("id") != cfg.owner_chat_id:
+        log.warning("ignored a reaction from a non-owner chat")
+        return
+    lesson_id = db.find_lesson_id_by_message(conn, reaction.get("message_id"))
+    if lesson_id is None:
+        return  # a message that isn't part of any lesson
+    db.set_feedback(conn, lesson_id, reactions.pick_reaction(reaction.get("new_reaction", [])))
+
+
 def handle_update(update: dict, cfg: Config, conn, tg: TelegramClient, answer_fn) -> None:
+    if "message_reaction" in update:
+        handle_reaction(update["message_reaction"], cfg, conn)
+        return
+
     message = update.get("message")
     if not message:
         return

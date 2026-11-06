@@ -13,21 +13,25 @@ from pathlib import Path
 
 from . import db
 from .config import ROOT, load_config
+from .reactions import REACTIONS
 
 LOGS_DIR = ROOT / "learning" / "logs"
 MSG_CURSOR = "export_msg_cursor"
 LESSON_CURSOR = "export_lesson_cursor"
+FEEDBACK_CURSOR = "export_feedback_cursor"
 
 
 def _local(iso_utc: str) -> str:
     return datetime.fromisoformat(iso_utc).astimezone().strftime("%Y-%m-%d %H:%M")
 
 
-def render_export(conn: sqlite3.Connection) -> tuple[str, int, int] | None:
-    """Build the markdown for everything new. Returns (text, msg_cursor, lesson_cursor)
-    or None if there is nothing new."""
+def render_export(conn: sqlite3.Connection) -> tuple[str, int, int, int] | None:
+    """Build the markdown for everything new. Returns
+    (text, msg_cursor, lesson_cursor, feedback_cursor) or None if there is nothing new."""
     msg_cursor = int(db.get_state(conn, MSG_CURSOR, "0"))
     lesson_cursor = int(db.get_state(conn, LESSON_CURSOR, "0"))
+    feedback_cursor = int(db.get_state(conn, FEEDBACK_CURSOR, "0"))
+    new_feedback = db.feedback_since(conn, feedback_cursor)
 
     new_lessons = conn.execute("SELECT * FROM lessons WHERE id > ? ORDER BY id", (lesson_cursor,)).fetchall()
     new_messages = conn.execute(
@@ -36,7 +40,7 @@ def render_export(conn: sqlite3.Connection) -> tuple[str, int, int] | None:
         "WHERE m.id > ? ORDER BY m.lesson_id, m.id",
         (msg_cursor,),
     ).fetchall()
-    if not new_lessons and not new_messages:
+    if not new_lessons and not new_messages and not new_feedback:
         return None
 
     lines: list[str] = [f"# Export {datetime.now().astimezone().strftime('%Y-%m-%d %H:%M')}", ""]
@@ -51,6 +55,16 @@ def render_export(conn: sqlite3.Connection) -> tuple[str, int, int] | None:
                 f"- Lesson {les['id']} [{les['track']}, {les['kind']}] {les['topic']} "
                 f"(sent {_local(les['sent_at'])}) — {questions} question(s) so far"
             )
+        lines.append("")
+
+    if new_feedback:
+        lines.append("## Reactions (Ayush's latest reaction per lesson)")
+        for fb in new_feedback:
+            if fb["reaction"] is None:
+                meaning = "reaction removed - no signal"
+            else:
+                meaning = f"{fb['reaction']} = {REACTIONS.get(fb['reaction'], 'no meaning defined')}"
+            lines.append(f"- Lesson {fb['lesson_id']} [{fb['track']}, {fb['kind']}] {fb['topic']}: {meaning}")
         lines.append("")
 
     if new_messages:
@@ -70,7 +84,8 @@ def render_export(conn: sqlite3.Connection) -> tuple[str, int, int] | None:
 
     max_msg = max([msg_cursor] + [m["id"] for m in new_messages])
     max_lesson = max([lesson_cursor] + [l["id"] for l in new_lessons])
-    return "\n".join(lines), max_msg, max_lesson
+    max_feedback = max([feedback_cursor] + [f["seq"] for f in new_feedback])
+    return "\n".join(lines), max_msg, max_lesson, max_feedback
 
 
 def export(conn: sqlite3.Connection, logs_dir: Path = LOGS_DIR) -> Path | None:
@@ -78,7 +93,7 @@ def export(conn: sqlite3.Connection, logs_dir: Path = LOGS_DIR) -> Path | None:
     result = render_export(conn)
     if result is None:
         return None
-    text, msg_cursor, lesson_cursor = result
+    text, msg_cursor, lesson_cursor, feedback_cursor = result
     logs_dir.mkdir(parents=True, exist_ok=True)
     path = logs_dir / f"{datetime.now().astimezone().strftime('%Y-%m-%d')}.md"
     with path.open("a", encoding="utf-8") as f:
@@ -86,6 +101,7 @@ def export(conn: sqlite3.Connection, logs_dir: Path = LOGS_DIR) -> Path | None:
     # Cursors move only after the file is safely written.
     db.set_state(conn, MSG_CURSOR, str(msg_cursor))
     db.set_state(conn, LESSON_CURSOR, str(lesson_cursor))
+    db.set_state(conn, FEEDBACK_CURSOR, str(feedback_cursor))
     return path
 
 

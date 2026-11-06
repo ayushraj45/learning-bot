@@ -61,3 +61,14 @@ def test_api_error_carries_code_and_hides_token():
         client_with(handler).get_updates()
     assert e.value.code == 429 and e.value.retryable
     assert "TOKEN" not in str(e.value)
+
+
+def test_get_updates_asks_for_reactions():
+    seen = {}
+
+    def handler(request):
+        seen["body"] = json.loads(request.content)
+        return httpx.Response(200, json={"ok": True, "result": []})
+
+    client_with(handler).get_updates()
+    assert "message_reaction" in seen["body"]["allowed_updates"]

@@ -148,3 +148,54 @@ def test_bad_update_is_skipped_and_offset_advances(env):
 
     bot.process_updates([msg("q", update_id=7)], cfg, conn, Exploding(), lambda *a: "x")
     assert db.get_state(conn, "tg_offset") == "8"
+
+
+# ---- reactions ----------------------------------------------------------------
+
+def reaction(message_id, emojis, chat=OWNER, update_id=1):
+    return {
+        "update_id": update_id,
+        "message_reaction": {
+            "chat": {"id": chat},
+            "message_id": message_id,
+            "new_reaction": [{"type": "emoji", "emoji": e} for e in emojis],
+        },
+    }
+
+
+def feedback(conn, lesson_id):
+    return conn.execute("SELECT reaction FROM feedback WHERE lesson_id = ?", (lesson_id,)).fetchone()
+
+
+def test_thumbs_up_is_stored_against_the_lesson(env):
+    cfg, conn, tg, answer_fn, _ = env
+    lesson = db.add_lesson(conn, track="data", topic="A", text="a", telegram_message_ids=[50, 51])
+    bot.handle_update(reaction(51, ["👍"]), cfg, conn, tg, answer_fn)  # reacted to the 2nd part
+    assert feedback(conn, lesson)["reaction"] == "👍"
+    assert tg.sent == []  # silent, no reply
+
+
+def test_changing_then_removing_a_reaction_keeps_latest_and_allows_null(env):
+    cfg, conn, tg, answer_fn, _ = env
+    lesson = db.add_lesson(conn, track="data", topic="A", text="a", telegram_message_ids=[50])
+    bot.handle_update(reaction(50, ["👍"]), cfg, conn, tg, answer_fn)
+    bot.handle_update(reaction(50, ["👎"], update_id=2), cfg, conn, tg, answer_fn)
+    assert feedback(conn, lesson)["reaction"] == "👎"
+    bot.handle_update(reaction(50, [], update_id=3), cfg, conn, tg, answer_fn)  # removed
+    assert feedback(conn, lesson)["reaction"] is None
+
+
+def test_unknown_emoji_stores_no_signal(env):
+    cfg, conn, tg, answer_fn, _ = env
+    lesson = db.add_lesson(conn, track="data", topic="A", text="a", telegram_message_ids=[50])
+    bot.handle_update(reaction(50, ["👍"]), cfg, conn, tg, answer_fn)
+    bot.handle_update(reaction(50, ["🔥"], update_id=2), cfg, conn, tg, answer_fn)
+    assert feedback(conn, lesson)["reaction"] is None
+
+
+def test_reaction_from_stranger_or_unrelated_message_is_ignored(env):
+    cfg, conn, tg, answer_fn, _ = env
+    lesson = db.add_lesson(conn, track="data", topic="A", text="a", telegram_message_ids=[50])
+    bot.handle_update(reaction(50, ["👍"], chat=STRANGER), cfg, conn, tg, answer_fn)
+    bot.handle_update(reaction(777, ["👍"], update_id=2), cfg, conn, tg, answer_fn)
+    assert feedback(conn, lesson) is None
