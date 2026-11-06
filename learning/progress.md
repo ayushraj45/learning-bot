@@ -1,9 +1,9 @@
 # Progress
 
 ## Pointers
-- Last track taught: data
-- AI development: up to — A1 (tokens, temperature/top-p done; next: prompting patterns) — NEXT track to teach
-- Data engineering: up to — B1 (joins, GROUP BY/HAVING done; next: subqueries vs CTEs, then window functions)
+- Last track taught: ai
+- AI development: up to — A1 (tokens, temperature/top-p, few-shot done; next: chain-of-thought, system vs user prompts, hallucination)
+- Data engineering: up to — B1 (joins, GROUP BY/HAVING done; next: subqueries vs CTEs, then window functions) — NEXT track to teach
 
 ## Module levels
 Levels: new | seen | solid | mastered
@@ -37,6 +37,8 @@ Levels: new | seen | solid | mastered
 - 2026-11-05 ai: A1 temperature, top-p, greedy, temp 0 not fully deterministic
 - 2026-11-05 data: B1 GROUP BY, WHERE vs HAVING, COUNT variants; wrote SQL coding challenge (HAVING/aggregation)
 - 2026-11-05 ai: DRILL on context window overflow (A1); awaiting grade. Pointers unchanged (next ai lesson: prompting patterns)
+- 2026-11-05 drill graded 3/5 (knew causes/fixes, missed trade-offs and reply-budget); A1 stays seen
+- 2026-11-06 ai: A1 few-shot prompting (zero-shot vs few-shot, token cost, varied examples)
 
 ## Pacing notes
 (reasons for skipping, reordering or revisiting)
