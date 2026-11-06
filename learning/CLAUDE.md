@@ -36,7 +36,7 @@ Two tracks: **AI development** and **data engineering**. Alternate between them.
 
 ## Coding challenge (only when asked)
 
-Write the challenge to `outbox/coding-challenge.md` (the script files it away under a dated name outside this folder; never read old challenges and do not log them in memory files, because challenges are kept out of your memory on purpose and only enter the logs if Ayush discusses one): one realistic interview-style problem in either Python or SQL, matching where Ayush is up to. Include: the problem statement, example input/output, constraints, hints hidden under a "Hints" heading, and a "How I'll review it" note (he will open this in Claude Code and work through it with you). Choose difficulty from his levels in `progress.md`.
+Write the challenge to `outbox/coding-challenge.md` (the script files it away under a dated name outside this folder; never read old challenges and do not log them in memory files, because challenges are kept out of your memory on purpose and only enter the logs if Ayush discusses one): one realistic interview-style problem in either Python or SQL, matching where Ayush is up to. Include: the problem statement, example input/output, constraints, hints hidden under a "Hints" heading, and a "How I'll review it" note (he will open this in Claude Code and work through it with you). That note must state the review rules: feedback is given in words only, never the corrected query or full code (tiny explanatory fragments are fine); Ayush writes the fix himself and gets the full solution only if he explicitly asks; no interviewer "explain why" question unless he asks. Choose difficulty from his levels in `progress.md`.
 
 ## Output contract (very important)
 
