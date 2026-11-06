@@ -5,6 +5,7 @@ $ErrorActionPreference = 'Stop'
 $Root      = Split-Path $PSScriptRoot -Parent
 $Py        = Join-Path $Root '.venv\Scripts\python.exe'
 $Learning  = Join-Path $Root 'learning'
+$ChallengesDir = Join-Path $Root 'coding-challenges'   # outside learning/: Claude's memory never includes these
 $DataDir   = Join-Path $Root 'data'
 $LockFile  = Join-Path $DataDir 'run.lock'
 $RunLog    = Join-Path $DataDir 'runs.log'
@@ -78,17 +79,18 @@ function Invoke-Claude([string]$Prompt) {
     return $code
 }
 
-# Commits learning/ (and only learning/) and pushes if a remote exists. Failures are logged, not fatal.
+# Commits learning/ and coding-challenges/ (nothing else) and pushes if a remote exists. Failures are logged, not fatal.
 function Backup-Learning([string]$Message) {
     if (-not (Test-Path (Join-Path $Root '.git'))) { return }
     Push-Location $Root
     $prev = $ErrorActionPreference
     $ErrorActionPreference = 'Continue'
     try {
-        git add -- learning 2>&1 | Out-Null
-        git diff --cached --quiet -- learning
+        New-Item -ItemType Directory -Force -Path $ChallengesDir | Out-Null
+        git add -- learning coding-challenges 2>&1 | Out-Null
+        git diff --cached --quiet -- learning coding-challenges
         if ($LASTEXITCODE -ne 0) {
-            git commit -q -m $Message -- learning 2>&1 | ForEach-Object { Write-Log "git: $_" }
+            git commit -q -m $Message -- learning coding-challenges 2>&1 | ForEach-Object { Write-Log "git: $_" }
         }
         if (git remote) {
             git push -q 2>&1 | ForEach-Object { Write-Log "git: $_" }

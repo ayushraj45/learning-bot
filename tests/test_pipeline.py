@@ -176,3 +176,7 @@ def test_iso_week_format():
     from datetime import date
     assert weekly.current_week(date(2026, 11, 4)) == "2026-W45"
     assert weekly.current_week(date(2026, 1, 1)) == "2026-W01"
+
+
+def test_challenge_ping_names_the_dated_file():
+    assert "coding-challenges/2026-11-06.md" in alerts.challenge_message("coding-challenges/2026-11-06.md")

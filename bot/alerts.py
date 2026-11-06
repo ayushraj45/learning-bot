@@ -14,10 +14,8 @@ from pathlib import Path
 from .config import ConfigError, load_config
 from .telegram_api import TelegramClient
 
-CHALLENGE_TEXT = (
-    "💻 Today's coding challenge is ready. Open learning/coding-challenge.md "
-    "in Claude Code whenever you have time."
-)
+def challenge_message(path: str = "coding-challenges/") -> str:
+    return f"💻 Today's coding challenge is ready. Open {path} in Claude Code whenever you have time."
 
 
 def classify_claude_failure(output: str) -> str | None:
@@ -57,11 +55,12 @@ def main(argv: list[str] | None = None) -> int:
     fail = sub.add_parser("failure")
     fail.add_argument("--reason", required=True)
     fail.add_argument("--output-file")
-    sub.add_parser("challenge")
+    chal = sub.add_parser("challenge")
+    chal.add_argument("--path", default="coding-challenges/", help="where the challenge file is, shown in the message")
     args = parser.parse_args(argv)
 
     if args.cmd == "challenge":
-        ok = send_alert(CHALLENGE_TEXT)
+        ok = send_alert(challenge_message(args.path))
     else:
         output = ""
         if args.output_file and Path(args.output_file).exists():

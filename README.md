@@ -35,7 +35,7 @@ Full design and step list: `plan-telegram-learning-bot.md`.
 | Bot log (no message text, no secrets) | `data/bot.log` |
 | Last Claude output | `data/last-claude-output.txt` |
 | Database and backups | `data/learning.db`, `data/backups/` (newest 14) |
-| Today's coding challenge | `learning/coding-challenge.md` (you get a Telegram ping) |
+| Coding challenges | `coding-challenges/YYYY-MM-DD.md`, one file per day (you get a Telegram ping with the path). Kept outside `learning/` so Claude's lessons never see them. |
 | Remove everything scheduled | `.\scripts\register-tasks.ps1 -Unregister` |
 
 Manual runs for testing: `.\scripts\run-lesson.ps1 -Slot 11:30 -Force`, `.\scripts\run-weekly.ps1 -Force`. Add `-SkipClaude` to send whatever is already in `learning/outbox/lesson.md`.

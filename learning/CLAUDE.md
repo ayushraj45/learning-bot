@@ -32,11 +32,11 @@ Two tracks: **AI development** and **data engineering**. Alternate between them.
 
 - Normal runs: write a normal lesson.
 - The run told "this is a drill": instead write an **interview drill**, one realistic question for Ayush to answer in his own words. Pick a concept from recent lessons or `weak-spots.md`. Front-matter `kind: drill`. Keep it short; he replies in Telegram and a bot grades his answer. Check `question-bank.md` so you never repeat a question.
-- The run told "also write the coding challenge": additionally write `coding-challenge.md` (see below).
+- The run told "also write the coding challenge": additionally write the coding challenge to `outbox/coding-challenge.md` (see below).
 
 ## Coding challenge (only when asked)
 
-Write `coding-challenge.md` in this folder (overwrite it): one realistic interview-style problem in either Python or SQL, matching where Ayush is up to. Include: the problem statement, example input/output, constraints, hints hidden under a "Hints" heading, and a "How I'll review it" note (he will open this in Claude Code and work through it with you). Choose difficulty from his levels in `progress.md`.
+Write the challenge to `outbox/coding-challenge.md` (the script files it away under a dated name outside this folder; never read old challenges and do not log them in memory files, because challenges are kept out of your memory on purpose and only enter the logs if Ayush discusses one): one realistic interview-style problem in either Python or SQL, matching where Ayush is up to. Include: the problem statement, example input/output, constraints, hints hidden under a "Hints" heading, and a "How I'll review it" note (he will open this in Claude Code and work through it with you). Choose difficulty from his levels in `progress.md`.
 
 ## Output contract (very important)
 

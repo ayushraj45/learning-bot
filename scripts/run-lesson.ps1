@@ -36,7 +36,7 @@ if (-not (Enter-Lock)) {
 try {
     Write-Log "[$slotId] starting"
     $outbox        = Join-Path $Learning 'outbox\lesson.md'
-    $challengeFile = Join-Path $Learning 'coding-challenge.md'
+    $challengeFile = Join-Path $Learning 'outbox\coding-challenge.md'   # hand-off only; moved out of learning/ below
     $isDrill       = ($Slot -eq $DrillSlot)
     $isChallenge   = ($Slot -eq $ChallengeSlot)
 
@@ -48,6 +48,7 @@ try {
 
         # 5. Ask Claude for the lesson.
         Remove-Item $outbox -Force -ErrorAction SilentlyContinue   # never send a stale file
+        Remove-Item $challengeFile -Force -ErrorAction SilentlyContinue
         $today = Get-Date -Format 'dddd d MMMM yyyy'
         if ($isDrill) {
             $prompt = "Today is $today. This is a drill run: write an interview drill (kind: drill) as described in CLAUDE.md. Follow CLAUDE.md exactly, write outbox/lesson.md and update the memory files."
@@ -79,7 +80,11 @@ try {
     # 7. Coding challenge ping (16:30 slot).
     if ($isChallenge -and -not $SkipClaude) {
         if ((Test-Path $challengeFile) -and ((Get-Item $challengeFile).LastWriteTime -gt $started)) {
-            [void](Invoke-Python @('-m', 'bot.alerts', 'challenge'))
+            # Keep every day's challenge in its own dated file, outside learning/ so Claude never reads them.
+            New-Item -ItemType Directory -Force -Path $ChallengesDir | Out-Null
+            $dated = Join-Path $ChallengesDir ("{0}.md" -f $started.ToString('yyyy-MM-dd'))
+            Move-Item -Path $challengeFile -Destination $dated -Force
+            [void](Invoke-Python @('-m', 'bot.alerts', 'challenge', '--path', "coding-challenges/$($started.ToString('yyyy-MM-dd')).md"))
         } else {
             Send-Alert "Slot ${Slot}: the coding challenge wasn't written today."
         }
