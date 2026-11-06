@@ -58,13 +58,14 @@ def parse_lesson_file(path: Path) -> dict:
     return {"track": track, "topic": topic, "kind": kind, "text": body}
 
 
-def format_for_telegram(lesson: dict) -> str:
+def format_for_telegram(lesson: dict, number: int) -> str:
+    """`number` is the lesson's permanent number (its database id), shown as #N."""
     if lesson["kind"] == "drill":
         return (
-            f"🎤 **Interview drill: {lesson['topic']}**\n\n{lesson['text']}\n\n"
+            f"🎤 **#{number} · Interview drill: {lesson['topic']}**\n\n{lesson['text']}\n\n"
             "Reply to this message with your answer."
         )
-    return f"{TRACK_LABELS[lesson['track']]} · **{lesson['topic']}**\n\n{lesson['text']}"
+    return f"#{number} · {TRACK_LABELS[lesson['track']]} · **{lesson['topic']}**\n\n{lesson['text']}"
 
 
 def _send_with_retry(tg, chat_id: int, text: str, attempts: int = 3) -> list[int]:
@@ -82,9 +83,11 @@ def _send_with_retry(tg, chat_id: int, text: str, attempts: int = 3) -> list[int
 def send_lesson(conn, tg, owner_chat_id: int, path: Path, slot: str | None) -> int:
     """Parse, send, record, then remove the outbox file. Returns the lesson id."""
     lesson = parse_lesson_file(path)
-    message_ids = _send_with_retry(tg, owner_chat_id, format_for_telegram(lesson))
+    number = db.next_lesson_number(conn)
+    message_ids = _send_with_retry(tg, owner_chat_id, format_for_telegram(lesson, number))
     lesson_id = db.add_lesson(
         conn,
+        lesson_id=number,
         track=lesson["track"],
         topic=lesson["topic"],
         text=lesson["text"],

@@ -180,3 +180,29 @@ def test_iso_week_format():
 
 def test_challenge_ping_names_the_dated_file():
     assert "coding-challenges/2026-11-06.md" in alerts.challenge_message("coding-challenges/2026-11-06.md")
+
+
+def test_lessons_are_numbered_in_order_and_number_is_shown(tmp_path):
+    conn = db.connect(tmp_path / "t.db")
+    tg = FakeTelegram()
+    ids = [send_lesson.send_lesson(conn, tg, 1, write(tmp_path, GOOD), None) for _ in range(2)]
+    drill = send_lesson.send_lesson(conn, tg, 1, write(tmp_path, GOOD.replace("kind: lesson", "kind: drill")), None)
+    assert ids == [1, 2] and drill == 3
+    assert tg.sent[0].startswith("#1 · ") and tg.sent[1].startswith("#2 · ")
+    assert "#3 · Interview drill" in tg.sent[2]
+
+
+def test_numbering_continues_after_existing_lessons(tmp_path):
+    conn = db.connect(tmp_path / "t.db")
+    for _ in range(10):
+        db.add_lesson(conn, track="ai", topic="t", text="t", telegram_message_ids=[])
+    tg = FakeTelegram()
+    assert send_lesson.send_lesson(conn, tg, 1, write(tmp_path, GOOD), None) == 11
+    assert tg.sent[0].startswith("#11 · ")
+
+
+def test_failed_send_does_not_use_up_a_number(tmp_path):
+    conn = db.connect(tmp_path / "t.db")
+    with pytest.raises(TelegramError):
+        send_lesson.send_lesson(conn, FakeTelegram(fail_times=5, code=400), 1, write(tmp_path, GOOD), None)
+    assert send_lesson.send_lesson(conn, FakeTelegram(), 1, write(tmp_path, GOOD), None) == 1

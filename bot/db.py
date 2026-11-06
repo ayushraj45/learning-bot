@@ -70,6 +70,15 @@ def connect(path: Path | str) -> sqlite3.Connection:
 
 # ---- lessons ---------------------------------------------------------------
 
+def next_lesson_number(conn: sqlite3.Connection) -> int:
+    """The number the next lesson will get (lessons are numbered 1, 2, 3...).
+
+    Uses SQLite's own counter so a number is never reused, even if a row were deleted.
+    """
+    row = conn.execute("SELECT seq FROM sqlite_sequence WHERE name = 'lessons'").fetchone()
+    return (row["seq"] if row else 0) + 1
+
+
 def add_lesson(
     conn: sqlite3.Connection,
     *,
@@ -80,12 +89,15 @@ def add_lesson(
     kind: str = "lesson",
     slot: str | None = None,
     sent_at: str | None = None,
+    lesson_id: int | None = None,
 ) -> int:
+    """Store a lesson. Pass lesson_id to store it under the number already shown to the user."""
     with conn:
         cur = conn.execute(
-            "INSERT INTO lessons (slot, track, topic, kind, text, telegram_message_id, sent_at) "
-            "VALUES (?, ?, ?, ?, ?, ?, ?)",
+            "INSERT INTO lessons (id, slot, track, topic, kind, text, telegram_message_id, sent_at) "
+            "VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
             (
+                lesson_id,
                 slot,
                 track,
                 topic,
