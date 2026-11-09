@@ -1,10 +1,10 @@
 # Progress
 
 ## Pointers
-- Last track taught: data
+- Last track taught: ai (drill, 11-09; pointer unchanged: next normal lesson is ai A1 hallucination, then data LAG/LEAD)
 - AI development: up to A1 (next: hallucination causes/mitigations, then A2). Prompt injection intro done early (A8) after 👍 on lesson 11; later A8 can go deeper (guardrails, tool risks)
 - Data engineering: up to B1 (running totals/frames done; next: LAG/LEAD, then query plans/indexes). Lesson 12 (RANK) got 👍, so went deeper into frames
-- NEXT track to teach: ai
+- NEXT track to teach: data (drill used the ai slot; ai A1 hallucination still pending)
 
 ## Module levels
 Levels: new | seen | solid | mastered
@@ -43,6 +43,7 @@ Levels: new | seen | solid | mastered
 ## Drills
 - 2026-11-05 ai: context window overflow — 3/5 (knew causes/fixes, missed trade-offs and reply-token budget)
 - 2026-11-06 data: window AVG OVER vs GROUP BY/CTE — awaiting grade
+- 2026-11-09 ai: injection in email-reading refund agent (fixes + trade-offs) — awaiting grade
 
 ## Pacing notes
 - 2026-W45: only one drill graded (3/5), so nothing is marked solid. A1 and B1 stay `seen`. Revisit trade-off framing in answers. No curriculum changes.
