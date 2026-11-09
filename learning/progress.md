@@ -1,9 +1,9 @@
 # Progress
 
 ## Pointers
-- Last track taught: data
-- AI development: up to A1 (next: hallucination causes/mitigations, then A2) — NEXT track to teach. Lesson 11 (system vs user) got 👍: go deeper on prompting/security next time
-- Data engineering: up to B1 (next: LAG/LEAD, running totals)
+- Last track taught: ai
+- AI development: up to A1 (next: hallucination causes/mitigations, then A2). Prompt injection intro done early (A8) after 👍 on lesson 11; later A8 can go deeper (guardrails, tool risks)
+- Data engineering: up to B1 (next: LAG/LEAD, running totals) — NEXT track to teach. Lesson 12 (RANK) got 👍: go deeper (frames, performance)
 
 ## Module levels
 Levels: new | seen | solid | mastered
@@ -35,6 +35,7 @@ Levels: new | seen | solid | mastered
 - A1: tokens/context window/params vs tokens (asked what "parameters" means); temperature, top-p, greedy, temp 0 not fully deterministic; few-shot (zero vs few, token cost, varied examples); chain-of-thought (cost, reasoning models); system vs user prompts (roles, caching, not a security boundary) — 2026-11-09
 - B1: LEFT vs INNER JOIN + WHERE-vs-ON trap; GROUP BY, WHERE vs HAVING, COUNT variants; subqueries vs CTEs, correlated subqueries; window intro (ROW_NUMBER, PARTITION BY, top-N per group)
 - B1: ROW_NUMBER vs RANK vs DENSE_RANK, ties, Nth highest distinct — 2026-11-09
+- A8: prompt injection, direct vs indirect, blast-radius mitigations (lethal trifecta) — 2026-11-09 (pulled forward on 👍 reaction)
 - SQL coding challenges written: HAVING/aggregation (11-05), top 2 per customer (11-06)
 
 ## Drills
