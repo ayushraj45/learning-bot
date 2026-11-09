@@ -16,4 +16,6 @@ Interview questions already asked or taught, so none repeat. Format: `- <questio
 - What goes in the system vs user prompt, and can you rely on the system prompt for security? (ai, A1) — 2026-11-09
 - Difference between RANK, DENSE_RANK and ROW_NUMBER; find the second highest salary per department (data, B1) — 2026-11-09
 - How would you protect an LLM agent from prompt injection (direct vs indirect)? (ai, A8) — 2026-11-09
+- Running total of daily revenue per customer; what goes wrong with duplicate dates (RANGE vs ROWS)? (data, B1) — 2026-11-09
+- Coding: month-over-month revenue growth with LAG and YTD running total (SQL, B1) — 2026-11-09
 - Drill: return orders above that customer's own average amount; why window function over GROUP BY? (data, B1) — 2026-11-06 — awaiting grade

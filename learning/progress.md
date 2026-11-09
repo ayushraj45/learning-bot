@@ -1,9 +1,10 @@
 # Progress
 
 ## Pointers
-- Last track taught: ai
+- Last track taught: data
 - AI development: up to A1 (next: hallucination causes/mitigations, then A2). Prompt injection intro done early (A8) after 👍 on lesson 11; later A8 can go deeper (guardrails, tool risks)
-- Data engineering: up to B1 (next: LAG/LEAD, running totals) — NEXT track to teach. Lesson 12 (RANK) got 👍: go deeper (frames, performance)
+- Data engineering: up to B1 (running totals/frames done; next: LAG/LEAD, then query plans/indexes). Lesson 12 (RANK) got 👍, so went deeper into frames
+- NEXT track to teach: ai
 
 ## Module levels
 Levels: new | seen | solid | mastered
@@ -36,7 +37,8 @@ Levels: new | seen | solid | mastered
 - B1: LEFT vs INNER JOIN + WHERE-vs-ON trap; GROUP BY, WHERE vs HAVING, COUNT variants; subqueries vs CTEs, correlated subqueries; window intro (ROW_NUMBER, PARTITION BY, top-N per group)
 - B1: ROW_NUMBER vs RANK vs DENSE_RANK, ties, Nth highest distinct — 2026-11-09
 - A8: prompt injection, direct vs indirect, blast-radius mitigations (lethal trifecta) — 2026-11-09 (pulled forward on 👍 reaction)
-- SQL coding challenges written: HAVING/aggregation (11-05), top 2 per customer (11-06)
+- B1: running totals, default RANGE frame vs ROWS, moving average — 2026-11-09
+- SQL coding challenges written: HAVING/aggregation (11-05), top 2 per customer (11-06), month-over-month LAG + running total (11-09)
 
 ## Drills
 - 2026-11-05 ai: context window overflow — 3/5 (knew causes/fixes, missed trade-offs and reply-token budget)
