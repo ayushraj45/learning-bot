@@ -1,9 +1,9 @@
 # Progress
 
 ## Pointers
-- Last track taught: data
-- AI development: up to A1 (next: system vs user prompts, hallucination) — NEXT track to teach
-- Data engineering: up to B1 (next: RANK/DENSE_RANK, LAG/LEAD, running totals)
+- Last track taught: ai
+- AI development: up to A1 (next: hallucination causes/mitigations, then A2)
+- Data engineering: up to B1 (next: RANK/DENSE_RANK, LAG/LEAD, running totals) — NEXT track to teach
 
 ## Module levels
 Levels: new | seen | solid | mastered
@@ -32,7 +32,7 @@ Levels: new | seen | solid | mastered
 - B9 Data system design: new
 
 ## Covered so far
-- A1: tokens/context window/params vs tokens (asked what "parameters" means); temperature, top-p, greedy, temp 0 not fully deterministic; few-shot (zero vs few, token cost, varied examples); chain-of-thought (cost, reasoning models)
+- A1: tokens/context window/params vs tokens (asked what "parameters" means); temperature, top-p, greedy, temp 0 not fully deterministic; few-shot (zero vs few, token cost, varied examples); chain-of-thought (cost, reasoning models); system vs user prompts (roles, caching, not a security boundary) — 2026-11-09
 - B1: LEFT vs INNER JOIN + WHERE-vs-ON trap; GROUP BY, WHERE vs HAVING, COUNT variants; subqueries vs CTEs, correlated subqueries; window intro (ROW_NUMBER, PARTITION BY, top-N per group)
 - SQL coding challenges written: HAVING/aggregation (11-05), top 2 per customer (11-06)
 
