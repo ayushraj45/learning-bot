@@ -1,9 +1,9 @@
 # Progress
 
 ## Pointers
-- Last track taught: ai
-- AI development: up to A1 (next: hallucination causes/mitigations, then A2)
-- Data engineering: up to B1 (next: RANK/DENSE_RANK, LAG/LEAD, running totals) — NEXT track to teach
+- Last track taught: data
+- AI development: up to A1 (next: hallucination causes/mitigations, then A2) — NEXT track to teach. Lesson 11 (system vs user) got 👍: go deeper on prompting/security next time
+- Data engineering: up to B1 (next: LAG/LEAD, running totals)
 
 ## Module levels
 Levels: new | seen | solid | mastered
@@ -34,6 +34,7 @@ Levels: new | seen | solid | mastered
 ## Covered so far
 - A1: tokens/context window/params vs tokens (asked what "parameters" means); temperature, top-p, greedy, temp 0 not fully deterministic; few-shot (zero vs few, token cost, varied examples); chain-of-thought (cost, reasoning models); system vs user prompts (roles, caching, not a security boundary) — 2026-11-09
 - B1: LEFT vs INNER JOIN + WHERE-vs-ON trap; GROUP BY, WHERE vs HAVING, COUNT variants; subqueries vs CTEs, correlated subqueries; window intro (ROW_NUMBER, PARTITION BY, top-N per group)
+- B1: ROW_NUMBER vs RANK vs DENSE_RANK, ties, Nth highest distinct — 2026-11-09
 - SQL coding challenges written: HAVING/aggregation (11-05), top 2 per customer (11-06)
 
 ## Drills

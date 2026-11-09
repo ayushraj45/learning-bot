@@ -14,4 +14,5 @@ Interview questions already asked or taught, so none repeat. Format: `- <questio
 - How do you get the latest order per customer / top N per group? (data, B1) — 2026-11-06
 - Coding: top 2 paid orders per customer, with ties follow-up (SQL, B1) — 2026-11-06
 - What goes in the system vs user prompt, and can you rely on the system prompt for security? (ai, A1) — 2026-11-09
+- Difference between RANK, DENSE_RANK and ROW_NUMBER; find the second highest salary per department (data, B1) — 2026-11-09
 - Drill: return orders above that customer's own average amount; why window function over GROUP BY? (data, B1) — 2026-11-06 — awaiting grade
