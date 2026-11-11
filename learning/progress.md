@@ -1,10 +1,10 @@
 # Progress
 
 ## Pointers
-- Last track taught: ai (drill, 11-09; pointer unchanged: next normal lesson is ai A1 hallucination, then data LAG/LEAD)
+- Last track taught: data (LAG/LEAD, 11-11). Next normal lesson: ai A1 hallucination (or A8 deeper on 👍), then data query plans/indexes
 - AI development: up to A1 (next: hallucination causes/mitigations, then A2). Prompt injection intro done early (A8) after 👍 on lesson 11; later A8 can go deeper (guardrails, tool risks)
-- Data engineering: up to B1 (running totals/frames done; next: LAG/LEAD, then query plans/indexes). Lesson 12 (RANK) got 👍, so went deeper into frames
-- NEXT track to teach: data (drill used the ai slot; ai A1 hallucination still pending)
+- Data engineering: up to B1 (running totals/frames, LAG/LEAD done; next: query plans/indexes). Lesson 12 (RANK) got 👍, so went deeper into frames
+- NEXT track to teach: ai
 
 ## Module levels
 Levels: new | seen | solid | mastered
@@ -38,6 +38,7 @@ Levels: new | seen | solid | mastered
 - B1: ROW_NUMBER vs RANK vs DENSE_RANK, ties, Nth highest distinct — 2026-11-09
 - A8: prompt injection, direct vs indirect, blast-radius mitigations (lethal trifecta) — 2026-11-09 (pulled forward on 👍 reaction)
 - B1: running totals, default RANGE frame vs ROWS, moving average — 2026-11-09
+- B1: LAG/LEAD, partition/order, NULL first row + default, filter via CTE — 2026-11-11
 - SQL coding challenges written: HAVING/aggregation (11-05), top 2 per customer (11-06), month-over-month LAG + running total (11-09)
 
 ## Drills
