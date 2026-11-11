@@ -1,10 +1,10 @@
 # Progress
 
 ## Pointers
-- Last track taught: ai (hallucination, 11-11). Next normal lesson: data query plans/indexes, then ai A2 (structured outputs)
+- Last track taught: data (indexes/EXPLAIN, 11-11). Next normal lesson: ai A2 (structured outputs; 👍 on hallucination so skip A1 basics), then data (dedupe / gaps and islands)
 - AI development: A1 complete (hallucination done), next A2. Prompt injection intro done early (A8) after 👍 on lesson 11; later A8 can go deeper (guardrails, tool risks)
-- Data engineering: up to B1 (running totals/frames, LAG/LEAD done; next: query plans/indexes). Lesson 12 (RANK) got 👍, so went deeper into frames
-- NEXT track to teach: data
+- Data engineering: up to B1 (indexes/EXPLAIN done; next: dedupe, gaps and islands). Lesson 12 (RANK) got 👍, so went deeper into frames
+- NEXT track to teach: ai
 
 ## Module levels
 Levels: new | seen | solid | mastered
@@ -40,7 +40,8 @@ Levels: new | seen | solid | mastered
 - B1: running totals, default RANGE frame vs ROWS, moving average — 2026-11-09
 - B1: LAG/LEAD, partition/order, NULL first row + default, filter via CTE — 2026-11-11
 - A1: hallucination causes (autocomplete, missing facts, sycophancy), mitigations (grounding, cite, low temp, verify) and their costs — 2026-11-11
-- SQL coding challenges written: HAVING/aggregation (11-05), top 2 per customer (11-06), month-over-month LAG + running total (11-09)
+- B1: indexes (B-tree), seq scan vs seek, non-sargable functions/leading wildcard, EXPLAIN ANALYZE, write cost — 2026-11-11
+- SQL coding challenges written: HAVING/aggregation (11-05), top 2 per customer (11-06), month-over-month LAG + running total (11-09), longest login streak / gaps and islands (11-11)
 
 ## Drills
 - 2026-11-05 ai: context window overflow — 3/5 (knew causes/fixes, missed trade-offs and reply-token budget)
