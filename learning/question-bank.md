@@ -22,4 +22,5 @@ Interview questions already asked or taught, so none repeat. Format: `- <questio
 - Find gaps between consecutive orders per customer / what does LAG return on the first row? (data, B1) — 2026-11-11
 - How do you reduce hallucinations in a production LLM app? (ai, A1) — 2026-11-11
 - A query on a large orders table is slow; how do you investigate? (indexes, EXPLAIN) (data, B1) — 2026-11-11
+- Drill: support bot invented a 90-day refund policy; why, and 2-3 fixes with costs? (ai, A1) — 2026-11-11 — awaiting grade
 - Drill: return orders above that customer's own average amount; why window function over GROUP BY? (data, B1) — 2026-11-06 — awaiting grade

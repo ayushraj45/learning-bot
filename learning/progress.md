@@ -47,6 +47,7 @@ Levels: new | seen | solid | mastered
 - 2026-11-05 ai: context window overflow — 3/5 (knew causes/fixes, missed trade-offs and reply-token budget)
 - 2026-11-06 data: window AVG OVER vs GROUP BY/CTE — awaiting grade
 - 2026-11-09 ai: injection in email-reading refund agent (fixes + trade-offs) — awaiting grade
+- 2026-11-11 ai: support bot invented refund policy (hallucination causes, fixes + trade-offs) — awaiting grade
 
 ## Pacing notes
 - 2026-W45: only one drill graded (3/5), so nothing is marked solid. A1 and B1 stay `seen`. Revisit trade-off framing in answers. No curriculum changes.
