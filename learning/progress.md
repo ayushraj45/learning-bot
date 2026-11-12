@@ -1,17 +1,17 @@
 # Progress
 
 ## Pointers
-- Last track taught: data (indexes/EXPLAIN, 11-11). Next normal lesson: ai A2 (structured outputs; 👍 on hallucination so skip A1 basics), then data (dedupe / gaps and islands)
+- Last track taught: ai (A2 structured outputs, 11-12). Next normal lesson: data (dedupe / gaps and islands), then ai A2 tool calling loop
 - AI development: A1 complete (hallucination done), next A2. Prompt injection intro done early (A8) after 👍 on lesson 11; later A8 can go deeper (guardrails, tool risks)
 - Data engineering: up to B1 (indexes/EXPLAIN done; next: dedupe, gaps and islands). Lesson 12 (RANK) got 👍, so went deeper into frames
-- NEXT track to teach: ai
+- NEXT track to teach: data
 
 ## Module levels
 Levels: new | seen | solid | mastered
 
 ### AI development
 - A1 LLM fundamentals: seen
-- A2 Structured outputs and tool calling: new
+- A2 Structured outputs and tool calling: seen (structured outputs done; tool calling next)
 - A3 Embeddings and vector search: new
 - A4 RAG in depth: new
 - A5 Agents: new
@@ -41,6 +41,7 @@ Levels: new | seen | solid | mastered
 - B1: LAG/LEAD, partition/order, NULL first row + default, filter via CTE — 2026-11-11
 - A1: hallucination causes (autocomplete, missing facts, sycophancy), mitigations (grounding, cite, low temp, verify) and their costs — 2026-11-11
 - B1: indexes (B-tree), seq scan vs seek, non-sargable functions/leading wildcard, EXPLAIN ANALYZE, write cost — 2026-11-11
+- A2: JSON mode vs schema-constrained output vs validate+retry; shape ≠ correct values; reasoning field first — 2026-11-12
 - SQL coding challenges written: HAVING/aggregation (11-05), top 2 per customer (11-06), month-over-month LAG + running total (11-09), longest login streak / gaps and islands (11-11)
 
 ## Drills
