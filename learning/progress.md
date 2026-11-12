@@ -1,10 +1,10 @@
 # Progress
 
 ## Pointers
-- Last track taught: data (B1 dedupe, 11-12). Next normal lesson: ai A2 tool calling loop, then data (B1 gaps and islands lesson or move to B2)
-- AI development: A1 complete (hallucination done), next A2. Prompt injection intro done early (A8) after 👍 on lesson 11; later A8 can go deeper (guardrails, tool risks)
+- Last track taught: ai (A2 tool calling loop, 11-12). Next normal lesson: data (B1 gaps and islands lesson or move to B2)
+- AI development: A1 complete (hallucination done), A2 structured outputs + tool loop done; next tool-design/parallel calls or A3. Prompt injection intro done early (A8) after 👍 on lesson 11; later A8 can go deeper (guardrails, tool risks)
 - Data engineering: up to B1 (indexes/EXPLAIN done; next: dedupe, gaps and islands). Lesson 12 (RANK) got 👍, so went deeper into frames
-- NEXT track to teach: ai
+- NEXT track to teach: data
 
 ## Module levels
 Levels: new | seen | solid | mastered
@@ -43,13 +43,15 @@ Levels: new | seen | solid | mastered
 - B1: indexes (B-tree), seq scan vs seek, non-sargable functions/leading wildcard, EXPLAIN ANALYZE, write cost — 2026-11-11
 - A2: JSON mode vs schema-constrained output vs validate+retry; shape ≠ correct values; reasoning field first — 2026-11-12
 - B1: dedupe with ROW_NUMBER (partition by key, order by updated_at desc + tiebreaker), vs DISTINCT, find dupes via HAVING — 2026-11-12
-- SQL coding challenges written: HAVING/aggregation (11-05), top 2 per customer (11-06), month-over-month LAG + running total (11-09), longest login streak / gaps and islands (11-11)
+- A2: tool calling loop (model requests, code runs, result appended, loop; max-turn cap, validate args, errors as text, token growth) — 2026-11-12
+- SQL coding challenges written: HAVING/aggregation (11-05), top 2 per customer (11-06), month-over-month LAG + running total (11-09), longest login streak / gaps and islands (11-11), latest status per order + dedupe/tiebreak (11-12)
 
 ## Drills
 - 2026-11-05 ai: context window overflow — 3/5 (knew causes/fixes, missed trade-offs and reply-token budget)
 - 2026-11-06 data: window AVG OVER vs GROUP BY/CTE — awaiting grade
 - 2026-11-09 ai: injection in email-reading refund agent (fixes + trade-offs) — awaiting grade
-- 2026-11-11 ai: support bot invented refund policy (hallucination causes, fixes + trade-offs) — awaiting grade
+- 2026-11-11 ai: support bot invented refund policy (hallucination causes, fixes + trade-offs) — 3/5 (good fixes, no root cause, no trade-offs)
 
 ## Pacing notes
 - 2026-W45: only one drill graded (3/5), so nothing is marked solid. A1 and B1 stay `seen`. Revisit trade-off framing in answers. No curriculum changes.
+- 2026-11-12: second drill 3/5 with same gap (trade-offs). 👍 on lessons 13, 17, 18 (injection, hallucination, indexes) but no 4/5 drill yet, so still `seen`. Lesson 18 👍 → indexes can go deeper later (composite indexes).
