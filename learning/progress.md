@@ -1,7 +1,7 @@
 # Progress
 
 ## Pointers
-- Last track taught: data lesson (B2 star schema, 11-16). Next normal lesson: ai (A3 vector DBs/ANN, hybrid search). Then data: B2 SCDs / normalisation
+- Last track taught: ai lesson (A3 vector DBs/ANN/hybrid, 11-16 evening). Next normal lesson: data (B2 SCDs / normalisation). Then ai: A4 RAG chunking/retrieval
 - AI development: A1 complete (hallucination done), A2 structured outputs + tool loop done; next tool-design/parallel calls or A3. Prompt injection intro done early (A8) after 👍 on lesson 11; later A8 can go deeper (guardrails, tool risks)
 - Data engineering: up to B1 (indexes/EXPLAIN done; next: dedupe, gaps and islands). Lesson 12 (RANK) got 👍, so went deeper into frames
 - NEXT track to teach: data (B1 done, move to B2 data modelling). Then ai: A3 next (vector DBs/ANN, hybrid search); parallel tool calls deferred
@@ -47,7 +47,8 @@ Levels: new | seen | solid | mastered
 - B1: gaps and islands (date minus ROW_NUMBER constant, dedupe days first, per-user partition) — 2026-11-16
 - A3: embedding = vector of meaning, cosine similarity, same model for query+docs, misses exact codes — 2026-11-16
 - B2: star schema, fact vs dimension, grain, denormalised dims — 2026-11-16
-- SQL coding challenges written: HAVING/aggregation (11-05), top 2 per customer (11-06), month-over-month LAG + running total (11-09), longest login streak / gaps and islands (11-11), latest status per order + dedupe/tiebreak (11-12)
+- A3: vector DB, ANN vs exact search, HNSW, recall vs speed trade-off, hybrid search (BM25 + vector) — 2026-11-16
+- SQL coding challenges written (also cohort retention, 11-16): HAVING/aggregation (11-05), top 2 per customer (11-06), month-over-month LAG + running total (11-09), longest login streak / gaps and islands (11-11), latest status per order + dedupe/tiebreak (11-12)
 
 ## Drills
 - 2026-11-05 ai: context window overflow — 3/5 (knew causes/fixes, missed trade-offs and reply-token budget)
@@ -55,6 +56,7 @@ Levels: new | seen | solid | mastered
 - 2026-11-09 ai: injection in email-reading refund agent (fixes + trade-offs) — awaiting grade
 - 2026-11-11 ai: support bot invented refund policy (hallucination causes, fixes + trade-offs) — 3/5 (good fixes, no root cause, no trade-offs)
 - 2026-11-12 data: LOWER(email) non-sargable on 50M-row table (root cause, 2 fixes, costs) — awaiting grade
+- 2026-11-16 data: B2 grain/fan-out, SUM(order_total) doubled after join to items — awaiting grade (next normal lesson still data B2 SCDs)
 
 ## Pacing notes
 - 2026-W45: only one drill graded (3/5), so nothing is marked solid. A1 and B1 stay `seen`. Revisit trade-off framing in answers. No curriculum changes.

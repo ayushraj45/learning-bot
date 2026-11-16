@@ -31,4 +31,7 @@ Interview questions already asked or taught, so none repeat. Format: `- <questio
 - Find each user's longest streak of consecutive login days (gaps and islands) (data, B1) — 2026-11-16
 - What is an embedding and how does semantic search work (cosine similarity)? (ai, A3) — 2026-11-16
 - Explain a star schema: fact vs dimension tables, what is grain? (data, B2) — 2026-11-16
+- How does a vector DB search millions of embeddings fast, and what's the trade-off (ANN/HNSW, hybrid search)? (ai, A3) — 2026-11-16
+- Coding: monthly cohort retention (first paid order month, active m0-m3) (SQL, B1) — 2026-11-16
+- Drill: SUM(order_total) doubles after joining orders to order_items; why (grain/fan-out), 2 fixes with costs? (data, B2) — 2026-11-16 — awaiting grade
 - Drill: return orders above that customer's own average amount; why window function over GROUP BY? (data, B1) — 2026-11-06 — awaiting grade
