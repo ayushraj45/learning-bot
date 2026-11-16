@@ -28,4 +28,5 @@ Interview questions already asked or taught, so none repeat. Format: `- <questio
 - How does LLM tool/function calling work, and what can go wrong in the loop? (ai, A2) — 2026-11-12
 - Coding: current status per order from an event log with duplicate/tied timestamps, then count per status (SQL, B1) — 2026-11-12
 - Drill: WHERE LOWER(email)=... slow on indexed 50M-row table; why, 2 fixes with costs? (data, B1) — 2026-11-12 — awaiting grade
+- Find each user's longest streak of consecutive login days (gaps and islands) (data, B1) — 2026-11-16
 - Drill: return orders above that customer's own average amount; why window function over GROUP BY? (data, B1) — 2026-11-06 — awaiting grade
