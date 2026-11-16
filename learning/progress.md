@@ -1,10 +1,10 @@
 # Progress
 
 ## Pointers
-- Last track taught: data lesson (gaps and islands, 11-16). Next normal lesson: ai (A2 tool design/parallel calls, or A3 embeddings)
+- Last track taught: ai lesson (embeddings intro, 11-16). Next normal lesson: data (B2 data modelling)
 - AI development: A1 complete (hallucination done), A2 structured outputs + tool loop done; next tool-design/parallel calls or A3. Prompt injection intro done early (A8) after 👍 on lesson 11; later A8 can go deeper (guardrails, tool risks)
 - Data engineering: up to B1 (indexes/EXPLAIN done; next: dedupe, gaps and islands). Lesson 12 (RANK) got 👍, so went deeper into frames
-- NEXT track to teach: ai (after that data: B1 done, move to B2 data modelling)
+- NEXT track to teach: data (B1 done, move to B2 data modelling). Then ai: A3 next (vector DBs/ANN, hybrid search); parallel tool calls deferred
 
 ## Module levels
 Levels: new | seen | solid | mastered
@@ -12,7 +12,7 @@ Levels: new | seen | solid | mastered
 ### AI development
 - A1 LLM fundamentals: seen
 - A2 Structured outputs and tool calling: seen (structured outputs done; tool calling next)
-- A3 Embeddings and vector search: new
+- A3 Embeddings and vector search: seen
 - A4 RAG in depth: new
 - A5 Agents: new
 - A6 Harnesses, hooks, MCP: new
@@ -45,6 +45,7 @@ Levels: new | seen | solid | mastered
 - B1: dedupe with ROW_NUMBER (partition by key, order by updated_at desc + tiebreaker), vs DISTINCT, find dupes via HAVING — 2026-11-12
 - A2: tool calling loop (model requests, code runs, result appended, loop; max-turn cap, validate args, errors as text, token growth) — 2026-11-12
 - B1: gaps and islands (date minus ROW_NUMBER constant, dedupe days first, per-user partition) — 2026-11-16
+- A3: embedding = vector of meaning, cosine similarity, same model for query+docs, misses exact codes — 2026-11-16
 - SQL coding challenges written: HAVING/aggregation (11-05), top 2 per customer (11-06), month-over-month LAG + running total (11-09), longest login streak / gaps and islands (11-11), latest status per order + dedupe/tiebreak (11-12)
 
 ## Drills
