@@ -30,10 +30,11 @@ Started 2026-11-17. Earlier challenges were SQL (data engineering) and are not p
 Within a pattern, go in NeetCode's order (easy problems first).
 
 ## Pointer
-- Next NeetCode pattern: 1. Arrays and hashing, first problem (Contains Duplicate)
+- Next NeetCode problem: Arrays and hashing #2 (Valid Anagram)
 - Last practical kind set: none yet
 
 ## Set so far (one line each: date, type, problem)
+- 2026-11-17 neetcode: 217 Contains Duplicate (Arrays and hashing)
 
 ## Struggled with (set again as a Revisit 3+ days later, then remove)
 Add a problem here if the Q&A logs show Ayush struggled with it, or if he adds it himself.

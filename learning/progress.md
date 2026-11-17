@@ -1,7 +1,7 @@
 # Progress
 
 ## Pointers
-- Last track taught: data lesson (B2 normalisation, 11-17). Next normal lesson: ai A4 retrieval quality (reranking, query rewriting, metadata filters). Then data B3 pipelines (ETL vs ELT, idempotency)
+- Last track taught: ai lesson (A4 reranking, 11-17). Next normal lesson: data B3 pipelines (ETL vs ELT, idempotency). Then ai A4 RAG eval (recall@k, faithfulness) or A5 agents
 - AI development: A1 complete (hallucination done), A2 structured outputs + tool loop done; next tool-design/parallel calls or A3. Prompt injection intro done early (A8) after 👍 on lesson 11; later A8 can go deeper (guardrails, tool risks)
 - Data engineering: up to B1 (indexes/EXPLAIN done; next: dedupe, gaps and islands). Lesson 12 (RANK) got 👍, so went deeper into frames
 - NEXT track to teach: data (B1 done, move to B2 data modelling). Then ai: A3 next (vector DBs/ANN, hybrid search); parallel tool calls deferred
@@ -51,6 +51,7 @@ Levels: new | seen | solid | mastered
 - B2: SCD Type 1 vs 2 (surrogate key, valid_from/to, is_current), Type 3 mention — 2026-11-17
 - A4: RAG pipeline overview, chunking size trade-off, structure-aware splits, overlap, metadata/heading context — 2026-11-17
 - B2: normalisation vs denormalisation, update anomalies, OLTP vs analytics, 3NF rule of thumb — 2026-11-17
+- A4: reranking (wide top-k then cross-encoder, latency cost, shortlist limit), query rewriting, metadata filters — 2026-11-17
 - SQL coding challenges written (also cohort retention, 11-16): HAVING/aggregation (11-05), top 2 per customer (11-06), month-over-month LAG + running total (11-09), longest login streak / gaps and islands (11-11), latest status per order + dedupe/tiebreak (11-12)
 
 ## Drills
