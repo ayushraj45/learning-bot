@@ -34,4 +34,5 @@ Interview questions already asked or taught, so none repeat. Format: `- <questio
 - How does a vector DB search millions of embeddings fast, and what's the trade-off (ANN/HNSW, hybrid search)? (ai, A3) — 2026-11-16
 - Coding: monthly cohort retention (first paid order month, active m0-m3) (SQL, B1) — 2026-11-16
 - Drill: SUM(order_total) doubles after joining orders to order_items; why (grain/fan-out), 2 fixes with costs? (data, B2) — 2026-11-16 — awaiting grade
+- How do you track changing customer attributes in a warehouse (SCD Type 1 vs 2)? (data, B2) — 2026-11-17
 - Drill: return orders above that customer's own average amount; why window function over GROUP BY? (data, B1) — 2026-11-06 — awaiting grade

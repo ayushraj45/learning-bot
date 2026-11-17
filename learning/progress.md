@@ -1,7 +1,7 @@
 # Progress
 
 ## Pointers
-- Last track taught: ai lesson (A3 vector DBs/ANN/hybrid, 11-16 evening). Next normal lesson: data (B2 SCDs / normalisation). Then ai: A4 RAG chunking/retrieval
+- Last track taught: data lesson (B2 SCDs, 11-17). Next normal lesson: ai A4 RAG chunking/retrieval. Then data: B2 normalisation or B3 pipelines
 - AI development: A1 complete (hallucination done), A2 structured outputs + tool loop done; next tool-design/parallel calls or A3. Prompt injection intro done early (A8) after 👍 on lesson 11; later A8 can go deeper (guardrails, tool risks)
 - Data engineering: up to B1 (indexes/EXPLAIN done; next: dedupe, gaps and islands). Lesson 12 (RANK) got 👍, so went deeper into frames
 - NEXT track to teach: data (B1 done, move to B2 data modelling). Then ai: A3 next (vector DBs/ANN, hybrid search); parallel tool calls deferred
@@ -48,6 +48,7 @@ Levels: new | seen | solid | mastered
 - A3: embedding = vector of meaning, cosine similarity, same model for query+docs, misses exact codes — 2026-11-16
 - B2: star schema, fact vs dimension, grain, denormalised dims — 2026-11-16
 - A3: vector DB, ANN vs exact search, HNSW, recall vs speed trade-off, hybrid search (BM25 + vector) — 2026-11-16
+- B2: SCD Type 1 vs 2 (surrogate key, valid_from/to, is_current), Type 3 mention — 2026-11-17
 - SQL coding challenges written (also cohort retention, 11-16): HAVING/aggregation (11-05), top 2 per customer (11-06), month-over-month LAG + running total (11-09), longest login streak / gaps and islands (11-11), latest status per order + dedupe/tiebreak (11-12)
 
 ## Drills
