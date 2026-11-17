@@ -38,4 +38,5 @@ Interview questions already asked or taught, so none repeat. Format: `- <questio
 - Your RAG bot retrieves the wrong passages; how do you debug it (chunking size/overlap/structure)? (ai, A4) — 2026-11-17
 - Normalised vs denormalised: when would you pick each? (data, B2) — 2026-11-17
 - Your RAG returns relevant-looking but wrong chunks; how do you improve it (reranking, query rewriting, filters)? (ai, A4) — 2026-11-17
+- Drill: RAG over HR PDFs answers paternity question with maternity/partial chunk; root cause + 2-3 fixes with costs? (ai, A4) — 2026-11-17 — awaiting grade
 - Drill: return orders above that customer's own average amount; why window function over GROUP BY? (data, B1) — 2026-11-06 — awaiting grade

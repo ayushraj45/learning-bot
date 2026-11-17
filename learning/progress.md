@@ -60,6 +60,7 @@ Levels: new | seen | solid | mastered
 - 2026-11-09 ai: injection in email-reading refund agent (fixes + trade-offs) — awaiting grade
 - 2026-11-11 ai: support bot invented refund policy (hallucination causes, fixes + trade-offs) — 3/5 (good fixes, no root cause, no trade-offs)
 - 2026-11-12 data: LOWER(email) non-sargable on 50M-row table (root cause, 2 fixes, costs) — awaiting grade
+- 2026-11-17 ai: RAG wrong chunks (paternity vs maternity; chunking/reranking, root cause + costs) — awaiting grade (next normal lesson still data B3)
 - 2026-11-16 data: B2 grain/fan-out, SUM(order_total) doubled after join to items — awaiting grade (next normal lesson still data B2 SCDs)
 
 ## Pacing notes
