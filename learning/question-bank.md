@@ -40,4 +40,5 @@ Interview questions already asked or taught, so none repeat. Format: `- <questio
 - Your RAG returns relevant-looking but wrong chunks; how do you improve it (reranking, query rewriting, filters)? (ai, A4) — 2026-11-17
 - Drill: RAG over HR PDFs answers paternity question with maternity/partial chunk; root cause + 2-3 fixes with costs? (ai, A4) — 2026-11-17 — graded 3/5
 - ETL vs ELT, and how do you make a pipeline safe to retry (idempotency)? (data, B3) — 2026-11-18
+- How do you evaluate a RAG system (recall@k, faithfulness, golden set)? (ai, A4) — 2026-11-18
 - Drill: return orders above that customer's own average amount; why window function over GROUP BY? (data, B1) — 2026-11-06 — awaiting grade
