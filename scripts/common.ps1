@@ -79,6 +79,27 @@ function Invoke-Claude([string]$Prompt) {
     return $code
 }
 
+# The coding challenge type for a date: 'practical' (Spring Boot) on $PracticalChallengeDay,
+# 'react' on $ReactChallengeDay, else 'neetcode' (in Java). Needs schedule.ps1 dot-sourced first.
+function Get-ChallengeType([datetime]$Date) {
+    $day = $Date.DayOfWeek.ToString()
+    if ($day -eq $PracticalChallengeDay) { return 'practical' }
+    if ($day -eq $ReactChallengeDay) { return 'react' }
+    return 'neetcode'
+}
+
+# Moves learning/outbox/coding-challenge.md to coding-challenges/YYYY-MM-DD.md and pings Telegram.
+# Only accepts a file written after $Since (never publishes a stale one). Returns $true on success.
+function Publish-Challenge([datetime]$Since) {
+    $challengeFile = Join-Path $Learning 'outbox\coding-challenge.md'
+    if (-not ((Test-Path $challengeFile) -and ((Get-Item $challengeFile).LastWriteTime -gt $Since))) { return $false }
+    New-Item -ItemType Directory -Force -Path $ChallengesDir | Out-Null
+    $name  = '{0}.md' -f $Since.ToString('yyyy-MM-dd')
+    Move-Item -Path $challengeFile -Destination (Join-Path $ChallengesDir $name) -Force
+    [void](Invoke-Python @('-m', 'bot.alerts', 'challenge', '--path', "coding-challenges/$name"))
+    return $true
+}
+
 # Commits learning/ and coding-challenges/ (nothing else) and pushes if a remote exists. Failures are logged, not fatal.
 function Backup-Learning([string]$Message) {
     if (-not (Test-Path (Join-Path $Root '.git'))) { return }

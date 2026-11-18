@@ -6,6 +6,7 @@
 #
 # Tasks (times come from schedule.ps1):
 #   Lesson-HHmm   x5 weekdays        run-lesson.ps1
+#   WeekendChallenge-HHmm  Sat+Sun morning  run-challenge.ps1 (coding challenge only, no lessons)
 #   Weekly        Friday evening     run-weekly.ps1
 #   Backup        daily 21:00        run-backup.ps1
 #   Bot           at logon           start-bot.ps1 (restarts on crash)
@@ -65,6 +66,13 @@ foreach ($slot in $LessonSlots) {
     }
 }
 $plan += [pscustomobject]@{
+    Name     = 'WeekendChallenge-' + $WeekendChallengeTime.Replace(':', '')
+    When     = "Sat-Sun at $WeekendChallengeTime"
+    Trigger  = New-ScheduledTaskTrigger -Weekly -DaysOfWeek $WeekendChallengeDays -At (At $WeekendChallengeTime)
+    Args     = Script-Args 'run-challenge.ps1' "-Slot $WeekendChallengeTime"
+    Settings = $runSettings
+}
+$plan += [pscustomobject]@{
     Name = 'Weekly'; When = "$WeeklyDay at $WeeklyTime"
     Trigger = New-ScheduledTaskTrigger -Weekly -DaysOfWeek $WeeklyDay -At (At $WeeklyTime)
     Args = Script-Args 'run-weekly.ps1'; Settings = $weeklySettings
@@ -85,7 +93,7 @@ $principal = New-ScheduledTaskPrincipal -UserId $User -LogonType Interactive -Ru
 
 foreach ($t in $plan) {
     if ($DryRun) {
-        '{0,-14} {1,-26} powershell.exe {2}' -f $t.Name, $t.When, $t.Args
+        '{0,-22} {1,-26} powershell.exe {2}' -f $t.Name, $t.When, $t.Args
         continue
     }
     $action = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument $t.Args -WorkingDirectory (Split-Path $PSScriptRoot -Parent)

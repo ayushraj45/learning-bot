@@ -1,10 +1,10 @@
 # Progress
 
 ## Pointers
-- Last track taught: ai lesson (A4 RAG eval, 11-18). Next normal lesson: data B3 backfills/incremental loads. Then ai A5 agents (or A7 evals deeper)
-- AI development: A1 complete (hallucination done), A2 structured outputs + tool loop done; next tool-design/parallel calls or A3. Prompt injection intro done early (A8) after 👍 on lesson 11; later A8 can go deeper (guardrails, tool risks)
-- Data engineering: up to B1 (indexes/EXPLAIN done; next: dedupe, gaps and islands). Lesson 12 (RANK) got 👍, so went deeper into frames
-- NEXT track to teach: data (B1 done, move to B2 data modelling). Then ai: A3 next (vector DBs/ANN, hybrid search); parallel tool calls deferred
+- 2026-11-18 FOCUS CHANGE: interview in ~2 weeks (AVP backend/frontend: core Java, Spring, React hooks). Data engineering PARKED (see parked/data-engineering.md; his B1-B3 history below stays for reference). Daily: java x2, react x1, ai x1, evening drill (java or react).
+- java: nothing taught yet. Start J1 (equals/hashCode, immutability, String pool), then J2 collections/HashMap.
+- react: nothing taught yet. Start R2/R3 (re-renders, useState, useEffect dependencies).
+- ai: A1-A4 seen; next A5 agents (or A8 deeper). One lesson a day.
 
 ## Module levels
 Levels: new | seen | solid | mastered
@@ -21,7 +21,24 @@ Levels: new | seen | solid | mastered
 - A9 LLM system design: new
 - A10 Python (differences from JS only): new
 
-### Data engineering
+### Java and Spring (new 2026-11-18)
+- J1 Core Java: new
+- J2 Collections: new
+- J3 Java 8+ functional: new
+- J4 Concurrency: new
+- J5 JVM and memory: new
+- J6 Spring and Spring Boot: new
+- J7 Backend design and APIs: new
+
+### React and frontend (new 2026-11-18)
+- R1 JS/TS for React: new
+- R2 React fundamentals: new
+- R3 Hooks: new
+- R4 State, data, architecture: new
+- R5 Web fundamentals: new
+- R6 Frontend/full-stack design: new
+
+### Data engineering (PARKED)
 - B1 SQL for interviews: seen
 - B2 Data modelling: seen (star schema, facts/dims, grain done)
 - B3 Pipelines: seen (ETL/ELT, idempotency done)

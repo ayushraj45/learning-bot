@@ -206,3 +206,10 @@ def test_failed_send_does_not_use_up_a_number(tmp_path):
     with pytest.raises(TelegramError):
         send_lesson.send_lesson(conn, FakeTelegram(fail_times=5, code=400), 1, write(tmp_path, GOOD), None)
     assert send_lesson.send_lesson(conn, FakeTelegram(), 1, write(tmp_path, GOOD), None) == 1
+
+
+def test_new_tracks_are_accepted(tmp_path):
+    for track in ("java", "react"):
+        p = tmp_path / f"{track}.md"
+        p.write_text(GOOD.replace("track: ai", f"track: {track}"), encoding="utf-8")
+        assert send_lesson.parse_lesson_file(p)["track"] == track

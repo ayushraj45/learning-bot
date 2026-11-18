@@ -50,12 +50,13 @@ try {
         Remove-Item $outbox -Force -ErrorAction SilentlyContinue   # never send a stale file
         Remove-Item $challengeFile -Force -ErrorAction SilentlyContinue
         $today = Get-Date -Format 'dddd d MMMM yyyy'
+        $track = $SlotTracks[$Slot]
         if ($isDrill) {
-            $prompt = "Today is $today. This is a drill run: write an interview drill (kind: drill) as described in CLAUDE.md. Follow CLAUDE.md exactly, write outbox/lesson.md and update the memory files."
+            $prompt = "Today is $today. This is a drill run: write an interview drill (kind: drill) as described in CLAUDE.md. Track: $track. Follow CLAUDE.md exactly, write outbox/lesson.md and update the memory files."
         } else {
-            $prompt = "Today is $today. Run a normal lesson now. Follow CLAUDE.md exactly, write outbox/lesson.md and update the memory files."
+            $prompt = "Today is $today. Run a normal lesson now. Track for this slot: $track. Follow CLAUDE.md exactly, write outbox/lesson.md and update the memory files."
         }
-        if ($isChallenge) { $prompt += ' Also write coding-challenge.md as described in CLAUDE.md.' }
+        if ($isChallenge) { $prompt += " Also write coding-challenge.md as described in CLAUDE.md (type: $(Get-ChallengeType $started))." }
 
         $code = Invoke-Claude $prompt
         if ($code -ne 0) {
@@ -79,13 +80,8 @@ try {
 
     # 7. Coding challenge ping (16:30 slot).
     if ($isChallenge -and -not $SkipClaude) {
-        if ((Test-Path $challengeFile) -and ((Get-Item $challengeFile).LastWriteTime -gt $started)) {
-            # Keep every day's challenge in its own dated file, outside learning/ so Claude never reads them.
-            New-Item -ItemType Directory -Force -Path $ChallengesDir | Out-Null
-            $dated = Join-Path $ChallengesDir ("{0}.md" -f $started.ToString('yyyy-MM-dd'))
-            Move-Item -Path $challengeFile -Destination $dated -Force
-            [void](Invoke-Python @('-m', 'bot.alerts', 'challenge', '--path', "coding-challenges/$($started.ToString('yyyy-MM-dd')).md"))
-        } else {
+        # Keep every day's challenge in its own dated file, outside learning/ so Claude never reads them.
+        if (-not (Publish-Challenge $started)) {
             Send-Alert "Slot ${Slot}: the coding challenge wasn't written today."
         }
     }

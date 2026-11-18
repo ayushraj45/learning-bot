@@ -21,7 +21,12 @@ from .config import ROOT, ConfigError, load_config
 from .telegram_api import TelegramClient, TelegramError
 
 OUTBOX_FILE = ROOT / "learning" / "outbox" / "lesson.md"
-TRACK_LABELS = {"ai": "🤖 AI development", "data": "🗄️ Data engineering"}
+TRACK_LABELS = {
+    "ai": "🤖 AI development",
+    "java": "☕ Java & Spring",
+    "react": "⚛️ React & frontend",
+    "data": "🗄️ Data engineering",  # parked for now, still valid
+}
 VALID_KINDS = {"lesson", "drill"}
 MAX_BODY_CHARS = 3000  # lessons are meant to be a minute or two on a phone
 
@@ -46,7 +51,7 @@ def parse_lesson_file(path: Path) -> dict:
     track, topic, kind = meta.get("track", ""), meta.get("topic", ""), meta.get("kind", "lesson")
     body = m.group(2).strip()
     if track not in TRACK_LABELS:
-        raise LessonFormatError(f"track must be 'ai' or 'data', got {track!r}")
+        raise LessonFormatError(f"track must be one of {sorted(TRACK_LABELS)}, got {track!r}")
     if kind not in VALID_KINDS:
         raise LessonFormatError(f"kind must be 'lesson' or 'drill', got {kind!r}")
     if not topic:

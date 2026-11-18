@@ -9,7 +9,7 @@ SCHEMA = """
 CREATE TABLE IF NOT EXISTS lessons (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     slot TEXT UNIQUE,                 -- e.g. '2026-11-05T11:30'; NULL allowed for manual lessons
-    track TEXT NOT NULL,              -- 'ai' | 'data'
+    track TEXT NOT NULL,              -- 'ai' | 'java' | 'react' | 'data'
     topic TEXT NOT NULL,
     kind TEXT NOT NULL DEFAULT 'lesson',   -- 'lesson' | 'drill'
     text TEXT NOT NULL,

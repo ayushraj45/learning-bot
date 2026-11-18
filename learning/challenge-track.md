@@ -3,9 +3,10 @@
 Only coding-challenge runs read and update this file (see CLAUDE.md, "Coding challenge").
 Started 2026-11-17. Earlier challenges were SQL (data engineering) and are not part of this track.
 
-## Plan
-- Weekdays (16:30 run) and Saturday (09:00): next NeetCode 150 problem, Python.
-- Sunday (09:00): one practical FDE-style task (rotate the four kinds in CLAUDE.md).
+## Plan (changed 2026-11-18 for the Java/React interview sprint)
+- Weekdays (16:30 run): next NeetCode 150 problem, now in **Java** (earlier ones were Python; the pointer is unchanged).
+- Saturday (09:00): a React task (build a component/hook or fix a buggy one).
+- Sunday (09:00): a Spring Boot practical (small REST API or debug a buggy snippet).
 
 ## NeetCode 150 pattern order (about how many problems each)
 1. Arrays and hashing (9)
@@ -31,7 +32,8 @@ Within a pattern, go in NeetCode's order (easy problems first).
 
 ## Pointer
 - Next NeetCode problem: Arrays and hashing #2 (Valid Anagram)
-- Last practical kind set: none yet
+- Last practical kind set: none yet (Spring Boot from now on)
+- Last React task kind: none yet
 
 ## Set so far (one line each: date, type, problem)
 - 2026-11-17 neetcode: 217 Contains Duplicate (Arrays and hashing)

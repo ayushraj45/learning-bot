@@ -1,6 +1,6 @@
 # Interview-prep learning bot
 
-Five short lessons each weekday on Telegram (AI engineering and data engineering), written by Claude Code on this laptop. Reply to any lesson to ask follow-ups, answered by OpenAI. Claude's memory lives in `learning/`.
+Five short lessons each weekday on Telegram, written by Claude Code on this laptop, plus a coding challenge every day. **Interview sprint (from 2026-11-18):** the lessons are Java/Spring, React and one AI lesson a day (slot to track map in `scripts/schedule.ps1`); the evening drill is Java or React. Challenges: a NeetCode 150 problem in Java on weekdays, a React task on Saturday, a Spring Boot practical on Sunday. Weekends have no lessons, only the challenge, ready at 09:00. The data engineering track is parked in `learning/parked/data-engineering.md` and can be switched back on later. Reply to any lesson to ask follow-ups, answered by OpenAI. Claude's memory lives in `learning/`.
 
 Full design and step list: `plan-telegram-learning-bot.md`.
 
@@ -30,11 +30,13 @@ Full design and step list: `plan-telegram-learning-bot.md`.
 
 | What | Where |
 |---|---|
-| Times of the five lessons | `scripts/schedule.ps1` (re-run `register-tasks.ps1` after editing) |
+| Times of the five lessons, and which track each teaches (`$SlotTracks`) | `scripts/schedule.ps1` (re-run `register-tasks.ps1` after editing times; track changes need no re-register) |
 | Run history and errors | `data/runs.log` |
 | Bot log (no message text, no secrets) | `data/bot.log` |
 | Last Claude output | `data/last-claude-output.txt` |
 | Database and backups | `data/learning.db`, `data/backups/` (newest 14) |
+| Challenge times and types | `scripts/schedule.ps1`: weekdays with the 16:30 lesson; Sat/Sun at 09:00 via `run-challenge.ps1` (manual run: `.\scripts\run-challenge.ps1 -Slot 09:00 -Force`) |
+| Where you're up to in NeetCode 150 | `learning/challenge-track.md`. Add a problem under "Struggled with" to get it again a few days later |
 | Coding challenges | `coding-challenges/YYYY-MM-DD.md`, one file per day (you get a Telegram ping with the path). Kept outside `learning/` so Claude's lessons never see them. |
 | Remove everything scheduled | `.\scripts\register-tasks.ps1 -Unregister` |
 
