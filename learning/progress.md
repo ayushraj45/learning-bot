@@ -1,7 +1,7 @@
 # Progress
 
 ## Pointers
-- Last track taught: ai lesson (A4 reranking, 11-17). Next normal lesson: data B3 pipelines (ETL vs ELT, idempotency). Then ai A4 RAG eval (recall@k, faithfulness) or A5 agents
+- Last track taught: data lesson (B3 ETL/ELT + idempotency, 11-18). Next normal lesson: ai A4 RAG eval (recall@k, faithfulness) or A5 agents. Then data B3 backfills/incremental loads
 - AI development: A1 complete (hallucination done), A2 structured outputs + tool loop done; next tool-design/parallel calls or A3. Prompt injection intro done early (A8) after 👍 on lesson 11; later A8 can go deeper (guardrails, tool risks)
 - Data engineering: up to B1 (indexes/EXPLAIN done; next: dedupe, gaps and islands). Lesson 12 (RANK) got 👍, so went deeper into frames
 - NEXT track to teach: data (B1 done, move to B2 data modelling). Then ai: A3 next (vector DBs/ANN, hybrid search); parallel tool calls deferred
@@ -24,7 +24,7 @@ Levels: new | seen | solid | mastered
 ### Data engineering
 - B1 SQL for interviews: seen
 - B2 Data modelling: seen (star schema, facts/dims, grain done)
-- B3 Pipelines: new
+- B3 Pipelines: seen (ETL/ELT, idempotency done)
 - B4 Spark: new
 - B5 Streaming and CDC: new
 - B6 Orchestration and transformation: new
@@ -52,6 +52,7 @@ Levels: new | seen | solid | mastered
 - A4: RAG pipeline overview, chunking size trade-off, structure-aware splits, overlap, metadata/heading context — 2026-11-17
 - B2: normalisation vs denormalisation, update anomalies, OLTP vs analytics, 3NF rule of thumb — 2026-11-17
 - A4: reranking (wide top-k then cross-encoder, latency cost, shortlist limit), query rewriting, metadata filters — 2026-11-17
+- B3: ETL vs ELT, idempotency (upsert/MERGE vs partition overwrite) — 2026-11-18
 - SQL coding challenges written (also cohort retention, 11-16): HAVING/aggregation (11-05), top 2 per customer (11-06), month-over-month LAG + running total (11-09), longest login streak / gaps and islands (11-11), latest status per order + dedupe/tiebreak (11-12)
 
 ## Drills
@@ -60,7 +61,7 @@ Levels: new | seen | solid | mastered
 - 2026-11-09 ai: injection in email-reading refund agent (fixes + trade-offs) — awaiting grade
 - 2026-11-11 ai: support bot invented refund policy (hallucination causes, fixes + trade-offs) — 3/5 (good fixes, no root cause, no trade-offs)
 - 2026-11-12 data: LOWER(email) non-sargable on 50M-row table (root cause, 2 fixes, costs) — awaiting grade
-- 2026-11-17 ai: RAG wrong chunks (paternity vs maternity; chunking/reranking, root cause + costs) — awaiting grade (next normal lesson still data B3)
+- 2026-11-17 ai: RAG wrong chunks (paternity vs maternity; chunking/reranking, root cause + costs) — 3/5 (found both failure points; said embeddings are "3-D", treated 250-300 tokens as a rule, reranking costs not stated)
 - 2026-11-16 data: B2 grain/fan-out, SUM(order_total) doubled after join to items — awaiting grade (next normal lesson still data B2 SCDs)
 
 ## Pacing notes
