@@ -2,7 +2,7 @@
 
 ## Pointers
 - 2026-11-18 FOCUS CHANGE: interview in ~2 weeks (AVP backend/frontend: core Java, Spring, React hooks). Data engineering PARKED (see parked/data-engineering.md; his B1-B3 history below stays for reference). Daily: java x2, react x1, ai x1, evening drill (java or react).
-- java: nothing taught yet. Start J1 (equals/hashCode, immutability, String pool), then J2 collections/HashMap.
+- java: J1 equals/hashCode done. Next: immutability + String pool/StringBuilder, then J2 collections/HashMap internals.
 - react: nothing taught yet. Start R2/R3 (re-renders, useState, useEffect dependencies).
 - ai: A1-A4 seen; next A5 agents (or A8 deeper). One lesson a day.
 
@@ -22,7 +22,7 @@ Levels: new | seen | solid | mastered
 - A10 Python (differences from JS only): new
 
 ### Java and Spring (new 2026-11-18)
-- J1 Core Java: new
+- J1 Core Java: seen (equals/hashCode)
 - J2 Collections: new
 - J3 Java 8+ functional: new
 - J4 Concurrency: new
@@ -71,6 +71,7 @@ Levels: new | seen | solid | mastered
 - A4: reranking (wide top-k then cross-encoder, latency cost, shortlist limit), query rewriting, metadata filters — 2026-11-17
 - B3: ETL vs ELT, idempotency (upsert/MERGE vs partition overwrite) — 2026-11-18
 - A4: RAG eval (retrieval vs generation split, golden set, recall@k, faithfulness, answer relevance, LLM-judge) — 2026-11-18
+- J1: equals vs ==, equals/hashCode contract, HashSet bucket lookup failure, mutable keys — 2026-11-18
 - SQL coding challenges written (also cohort retention, 11-16): HAVING/aggregation (11-05), top 2 per customer (11-06), month-over-month LAG + running total (11-09), longest login streak / gaps and islands (11-11), latest status per order + dedupe/tiebreak (11-12)
 
 ## Drills
