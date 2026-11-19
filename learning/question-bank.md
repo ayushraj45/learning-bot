@@ -44,4 +44,5 @@ Interview questions already asked or taught, so none repeat. Format: `- <questio
 - What happens if you override equals but not hashCode? (java, J1) — 2026-11-18
 - Drill: return orders above that customer's own average amount; why window function over GROUP BY? (data, B1) — 2026-11-06 — awaiting grade
 - Drill: mutable key mutated after put into HashMap, get returns null; why, 2 fixes with costs? (java, J1) — 2026-11-18 — awaiting grade
+- Why is String immutable, and what does new String("hi") == "hi" give? StringBuilder vs += in loops (java, J1) — 2026-11-19
 - What causes a React component to re-render? Why doesn't mutating state work? (react, R2) — 2026-11-18
