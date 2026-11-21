@@ -2,7 +2,7 @@
 
 ## Pointers
 - 2026-11-18 FOCUS CHANGE: interview in ~2 weeks (AVP backend/frontend: core Java, Spring, React hooks). Data engineering PARKED (see parked/data-engineering.md; his B1-B3 history below stays for reference). Daily: java x2, react x1, ai x1, evening drill (java or react).
-- java: J1 equals/hashCode + String immutability/pool done. Next: writing an immutable class (final, defensive copies, records), then J2 collections/HashMap internals.
+- java: J1 equals/hashCode, String pool, immutable class done. Next: J2 collections/HashMap internals (resize, treeify), then J1 exceptions/generics later.
 - react: R2 re-render triggers done. Next: keys + reconciliation, then useState updater/stale closures, useEffect dependencies.
 - ai: A1-A4 seen; next A5 agents (or A8 deeper). One lesson a day.
 
@@ -74,6 +74,7 @@ Levels: new | seen | solid | mastered
 - J1: equals vs ==, equals/hashCode contract, HashSet bucket lookup failure, mutable keys — 2026-11-18
 - R2: re-render triggers (state, parent, context), Object.is/mutation trap, render vs DOM commit — 2026-11-18
 - J1: String immutability (why), string pool, new String vs literal ==, += in loops vs StringBuilder/StringBuffer — 2026-11-19
+- J1: immutable class recipe, final ref vs object, defensive copies in/out, List.copyOf, records shallow — 2026-11-20
 - SQL coding challenges written (also cohort retention, 11-16): HAVING/aggregation (11-05), top 2 per customer (11-06), month-over-month LAG + running total (11-09), longest login streak / gaps and islands (11-11), latest status per order + dedupe/tiebreak (11-12)
 
 ## Drills

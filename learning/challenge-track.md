@@ -33,11 +33,12 @@ Within a pattern, go in NeetCode's order (easy problems first).
 ## Pointer
 - Next NeetCode problem: Arrays and hashing #3 (Two Sum)
 - Last practical kind set: none yet (Spring Boot from now on)
-- Last React task kind: none yet
+- Last React task kind: build (debounced search + race). Next Saturday: a fix-the-buggy-component task
 
 ## Set so far (one line each: date, type, problem)
 - 2026-11-17 neetcode: 217 Contains Duplicate (Arrays and hashing)
 - 2026-11-18 neetcode: 242 Valid Anagram (Arrays and hashing, Java)
+- 2026-11-21 react: debounced user search (useDebouncedValue + AbortController race handling)
 
 ## Struggled with (set again as a Revisit 3+ days later, then remove)
 Add a problem here if the Q&A logs show Ayush struggled with it, or if he adds it himself.
