@@ -43,6 +43,7 @@ Interview questions already asked or taught, so none repeat. Format: `- <questio
 - How do you evaluate a RAG system (recall@k, faithfulness, golden set)? (ai, A4) — 2026-11-18
 - What happens if you override equals but not hashCode? (java, J1) — 2026-11-18
 - Drill: return orders above that customer's own average amount; why window function over GROUP BY? (data, B1) — 2026-11-06 — awaiting grade
+- How does HashMap work internally / what happens on collision and resize? (java, J2) — 2026-11-23 — taught
 - Drill: mutable key mutated after put into HashMap, get returns null; why, 2 fixes with costs? (java, J1) — 2026-11-18 — awaiting grade
 - Why is String immutable, and what does new String("hi") == "hi" give? StringBuilder vs += in loops (java, J1) — 2026-11-19
 - How do you create an immutable class in Java? Is `final` enough? Are records immutable? (java, J1) — 2026-11-20
