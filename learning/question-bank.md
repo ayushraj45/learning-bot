@@ -49,4 +49,5 @@ Interview questions already asked or taught, so none repeat. Format: `- <questio
 - How do you create an immutable class in Java? Is `final` enough? Are records immutable? (java, J1) — 2026-11-20
 - Agent vs workflow: what's the difference and when would you pick each? (ai, A5) — 2026-11-23
 - ConcurrentHashMap vs Collections.synchronizedMap; why is containsKey+put still a race? (java, J2) — 2026-11-23
+- Why not use array index as key? Inputs show wrong values after deleting a row, why? (react, R2) — 2026-11-23
 - What causes a React component to re-render? Why doesn't mutating state work? (react, R2) — 2026-11-18
