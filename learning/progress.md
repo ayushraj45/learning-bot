@@ -4,7 +4,7 @@
 - 2026-11-18 FOCUS CHANGE: interview in ~2 weeks (AVP backend/frontend: core Java, Spring, React hooks). Data engineering PARKED (see parked/data-engineering.md; his B1-B3 history below stays for reference). Daily: java x2, react x1, ai x1, evening drill (java or react).
 - java: J1 equals/hashCode, String pool, immutable class done. J2 HashMap internals basics done. Next: ConcurrentHashMap vs synchronizedMap, fail-fast iterators, then ArrayList/LinkedList/TreeMap choice; J1 exceptions/generics later.
 - react: R2 re-render triggers done. Next: keys + reconciliation, then useState updater/stale closures, useEffect dependencies.
-- ai: A1-A4 seen; next A5 agents (or A8 deeper). One lesson a day.
+- ai: A1-A4 seen; A5 started (agent vs workflow done). Next: agent memory/planning, multi-agent trade-offs, then A6 MCP. One lesson a day.
 
 ## Module levels
 Levels: new | seen | solid | mastered
@@ -14,7 +14,7 @@ Levels: new | seen | solid | mastered
 - A2 Structured outputs and tool calling: seen (structured outputs done; tool calling next)
 - A3 Embeddings and vector search: seen
 - A4 RAG in depth: seen (pipeline + chunking done)
-- A5 Agents: new
+- A5 Agents: seen (agent vs workflow)
 - A6 Harnesses, hooks, MCP: new
 - A7 Evals and observability: new
 - A8 Safety, security and cost: new
@@ -76,6 +76,7 @@ Levels: new | seen | solid | mastered
 - J1: String immutability (why), string pool, new String vs literal ==, += in loops vs StringBuilder/StringBuffer — 2026-11-19
 - J1: immutable class recipe, final ref vs object, defensive copies in/out, List.copyOf, records shallow — 2026-11-20
 - J2: HashMap buckets, power-of-two mask, collisions + equals, load 0.75 resize, pre-sizing, treeify at 8 (table>=64) — 2026-11-23
+- A5: agent vs workflow, who controls steps, turn cap/budget, compounding errors, approval on risky tools — 2026-11-23
 - SQL coding challenges written (also cohort retention, 11-16): HAVING/aggregation (11-05), top 2 per customer (11-06), month-over-month LAG + running total (11-09), longest login streak / gaps and islands (11-11), latest status per order + dedupe/tiebreak (11-12)
 
 ## Drills

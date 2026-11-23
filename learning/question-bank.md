@@ -47,4 +47,5 @@ Interview questions already asked or taught, so none repeat. Format: `- <questio
 - Drill: mutable key mutated after put into HashMap, get returns null; why, 2 fixes with costs? (java, J1) — 2026-11-18 — awaiting grade
 - Why is String immutable, and what does new String("hi") == "hi" give? StringBuilder vs += in loops (java, J1) — 2026-11-19
 - How do you create an immutable class in Java? Is `final` enough? Are records immutable? (java, J1) — 2026-11-20
+- Agent vs workflow: what's the difference and when would you pick each? (ai, A5) — 2026-11-23
 - What causes a React component to re-render? Why doesn't mutating state work? (react, R2) — 2026-11-18
