@@ -2,7 +2,7 @@
 
 ## Pointers
 - 2026-11-18 FOCUS CHANGE: interview in ~2 weeks (AVP backend/frontend: core Java, Spring, React hooks). Data engineering PARKED (see parked/data-engineering.md; his B1-B3 history below stays for reference). Daily: java x2, react x1, ai x1, evening drill (java or react).
-- java: J1 equals/hashCode, String pool, immutable class done. J2 HashMap internals + ConcurrentHashMap vs synchronizedMap done. Fail-fast iterators done. Next: ArrayList/LinkedList/TreeMap choice; J1 exceptions/generics later.
+- java: J1 equals/hashCode, String pool, immutable class done. J2 HashMap internals + ConcurrentHashMap vs synchronizedMap done. Fail-fast iterators done. ArrayList vs LinkedList done. Next: TreeMap/LinkedHashMap/PriorityQueue choice; J1 exceptions/generics later.
 - react: R2 re-render triggers + keys/reconciliation done. Next: useState updater/stale closures, useEffect dependencies.
 - ai: A1-A4 seen; A5 started (agent vs workflow, memory done). Next: planning, multi-agent trade-offs, then A6 MCP. One lesson a day.
 
@@ -79,6 +79,7 @@ Levels: new | seen | solid | mastered
 - J2: fail-fast iterators, modCount, CME on remove in for-each, Iterator.remove/removeIf, best effort, CopyOnWriteArrayList — 2026-11-24
 - A5: agent vs workflow, who controls steps, turn cap/budget, compounding errors, approval on risky tools — 2026-11-23
 - J2: ConcurrentHashMap vs synchronizedMap (one lock vs lock-free reads/per-bucket writes), no nulls, weakly consistent iterators, check-then-act race, merge/computeIfAbsent — 2026-11-23
+- J2: ArrayList vs LinkedList (array/cache locality, LinkedList O(1) insert needs node, ArrayDeque for queues) — 2026-11-24
 - A5: agent memory (short-term = context + compaction; long-term external store; stale/poisoned notes) — 2026-11-24
 - R2: keys, reconciliation, index-key bug (state stuck to position), random keys remount, key to reset state — 2026-11-23
 - SQL coding challenges written (also cohort retention, 11-16): HAVING/aggregation (11-05), top 2 per customer (11-06), month-over-month LAG + running total (11-09), longest login streak / gaps and islands (11-11), latest status per order + dedupe/tiebreak (11-12)
