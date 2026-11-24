@@ -51,4 +51,5 @@ Interview questions already asked or taught, so none repeat. Format: `- <questio
 - ConcurrentHashMap vs Collections.synchronizedMap; why is containsKey+put still a race? (java, J2) — 2026-11-23
 - Why not use array index as key? Inputs show wrong values after deleting a row, why? (react, R2) — 2026-11-23
 - Drill: todo checkbox mutated in place + setTodos(same array), UI stale until another re-render; why, 2 fixes with costs? (react, R2) — 2026-11-23 — awaiting grade
+- Why does removing from a list inside a for-each throw ConcurrentModificationException, and how do you fix it? (java, J2) — 2026-11-24
 - What causes a React component to re-render? Why doesn't mutating state work? (react, R2) — 2026-11-18

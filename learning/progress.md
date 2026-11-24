@@ -2,7 +2,7 @@
 
 ## Pointers
 - 2026-11-18 FOCUS CHANGE: interview in ~2 weeks (AVP backend/frontend: core Java, Spring, React hooks). Data engineering PARKED (see parked/data-engineering.md; his B1-B3 history below stays for reference). Daily: java x2, react x1, ai x1, evening drill (java or react).
-- java: J1 equals/hashCode, String pool, immutable class done. J2 HashMap internals + ConcurrentHashMap vs synchronizedMap done. Next: fail-fast iterators, then ArrayList/LinkedList/TreeMap choice; J1 exceptions/generics later.
+- java: J1 equals/hashCode, String pool, immutable class done. J2 HashMap internals + ConcurrentHashMap vs synchronizedMap done. Fail-fast iterators done. Next: ArrayList/LinkedList/TreeMap choice; J1 exceptions/generics later.
 - react: R2 re-render triggers + keys/reconciliation done. Next: useState updater/stale closures, useEffect dependencies.
 - ai: A1-A4 seen; A5 started (agent vs workflow done). Next: agent memory/planning, multi-agent trade-offs, then A6 MCP. One lesson a day.
 
@@ -76,6 +76,7 @@ Levels: new | seen | solid | mastered
 - J1: String immutability (why), string pool, new String vs literal ==, += in loops vs StringBuilder/StringBuffer — 2026-11-19
 - J1: immutable class recipe, final ref vs object, defensive copies in/out, List.copyOf, records shallow — 2026-11-20
 - J2: HashMap buckets, power-of-two mask, collisions + equals, load 0.75 resize, pre-sizing, treeify at 8 (table>=64) — 2026-11-23
+- J2: fail-fast iterators, modCount, CME on remove in for-each, Iterator.remove/removeIf, best effort, CopyOnWriteArrayList — 2026-11-24
 - A5: agent vs workflow, who controls steps, turn cap/budget, compounding errors, approval on risky tools — 2026-11-23
 - J2: ConcurrentHashMap vs synchronizedMap (one lock vs lock-free reads/per-bucket writes), no nulls, weakly consistent iterators, check-then-act race, merge/computeIfAbsent — 2026-11-23
 - R2: keys, reconciliation, index-key bug (state stuck to position), random keys remount, key to reset state — 2026-11-23
