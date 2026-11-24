@@ -55,4 +55,5 @@ Interview questions already asked or taught, so none repeat. Format: `- <questio
 - How would you give an agent memory / handle a very long task? (ai, A5) — 2026-11-24
 - ArrayList vs LinkedList: when would you use each? Is LinkedList insert really O(1)? (java, J2) — 2026-11-24
 - Why does setCount(count + 1) twice only increment once, and why does a setTimeout/setInterval show an old value? (react, R3) — 2026-11-24
+- Drill: ConcurrentHashMap hit counter with containsKey/get/put loses counts; why, 1-2 fixes (merge, AtomicInteger/LongAdder) with costs? (java, J2) — 2026-11-24 — awaiting grade
 - What causes a React component to re-render? Why doesn't mutating state work? (react, R2) — 2026-11-18

@@ -94,6 +94,7 @@ Levels: new | seen | solid | mastered
 - 2026-11-17 ai: RAG wrong chunks (paternity vs maternity; chunking/reranking, root cause + costs) — 3/5 (found both failure points; said embeddings are "3-D", treated 250-300 tokens as a rule, reranking costs not stated)
 - 2026-11-18 java: mutable HashMap key lost after mutation (why + 2 fixes with costs) — awaiting grade
 - 2026-11-23 react: mutate todo + setTodos(same array), stale UI (why + 2 fixes with costs) — awaiting grade (react not drilled before)
+- 2026-11-24 java: ConcurrentHashMap containsKey/get/put counter loses counts (why + fixes with costs) — awaiting grade
 - 2026-11-16 data: B2 grain/fan-out, SUM(order_total) doubled after join to items — awaiting grade (next normal lesson still data B2 SCDs)
 
 ## Pacing notes
