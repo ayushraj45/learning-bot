@@ -3,7 +3,7 @@
 ## Pointers
 - 2026-11-18 FOCUS CHANGE: interview in ~2 weeks (AVP backend/frontend: core Java, Spring, React hooks). Data engineering PARKED (see parked/data-engineering.md; his B1-B3 history below stays for reference). Daily: java x2, react x1, ai x1, evening drill (java or react).
 - java: J1 equals/hashCode, String pool, immutable class done. J2 HashMap internals + ConcurrentHashMap vs synchronizedMap done. Fail-fast iterators done. ArrayList vs LinkedList done. Next: TreeMap/LinkedHashMap/PriorityQueue choice; J1 exceptions/generics later.
-- react: R2 re-render triggers + keys/reconciliation done. Next: useState updater/stale closures, useEffect dependencies.
+- react: R2 re-render triggers + keys/reconciliation done. R3 started: useState updater/stale closures done. Next: useEffect dependencies + cleanup.
 - ai: A1-A4 seen; A5 started (agent vs workflow, memory done). Next: planning, multi-agent trade-offs, then A6 MCP. One lesson a day.
 
 ## Module levels
@@ -33,7 +33,7 @@ Levels: new | seen | solid | mastered
 ### React and frontend (new 2026-11-18)
 - R1 JS/TS for React: new
 - R2 React fundamentals: seen (re-render triggers)
-- R3 Hooks: new
+- R3 Hooks: seen (useState updater/stale closures)
 - R4 State, data, architecture: new
 - R5 Web fundamentals: new
 - R6 Frontend/full-stack design: new
@@ -82,6 +82,7 @@ Levels: new | seen | solid | mastered
 - J2: ArrayList vs LinkedList (array/cache locality, LinkedList O(1) insert needs node, ArrayDeque for queues) — 2026-11-24
 - A5: agent memory (short-term = context + compaction; long-term external store; stale/poisoned notes) — 2026-11-24
 - R2: keys, reconciliation, index-key bug (state stuck to position), random keys remount, key to reset state — 2026-11-23
+- R3: render = snapshot, setCount(count+1) x3 adds 1, updater form c=>c+1, stale timers — 2026-11-24
 - SQL coding challenges written (also cohort retention, 11-16): HAVING/aggregation (11-05), top 2 per customer (11-06), month-over-month LAG + running total (11-09), longest login streak / gaps and islands (11-11), latest status per order + dedupe/tiebreak (11-12)
 
 ## Drills

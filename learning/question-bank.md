@@ -54,4 +54,5 @@ Interview questions already asked or taught, so none repeat. Format: `- <questio
 - Why does removing from a list inside a for-each throw ConcurrentModificationException, and how do you fix it? (java, J2) — 2026-11-24
 - How would you give an agent memory / handle a very long task? (ai, A5) — 2026-11-24
 - ArrayList vs LinkedList: when would you use each? Is LinkedList insert really O(1)? (java, J2) — 2026-11-24
+- Why does setCount(count + 1) twice only increment once, and why does a setTimeout/setInterval show an old value? (react, R3) — 2026-11-24
 - What causes a React component to re-render? Why doesn't mutating state work? (react, R2) — 2026-11-18
