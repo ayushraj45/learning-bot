@@ -87,6 +87,7 @@ Levels: new | seen | solid | mastered
 - SQL coding challenges written (also cohort retention, 11-16): HAVING/aggregation (11-05), top 2 per customer (11-06), month-over-month LAG + running total (11-09), longest login streak / gaps and islands (11-11), latest status per order + dedupe/tiebreak (11-12)
 
 ## Drills
+- 2026-11-25 react: overlapping async uploads, setFiles([...files, saved]) loses a file (why, fix, pick-order trade-off) — awaiting grade
 - 2026-11-05 ai: context window overflow — 3/5 (knew causes/fixes, missed trade-offs and reply-token budget)
 - 2026-11-06 data: window AVG OVER vs GROUP BY/CTE — awaiting grade
 - 2026-11-09 ai: injection in email-reading refund agent (fixes + trade-offs) — awaiting grade

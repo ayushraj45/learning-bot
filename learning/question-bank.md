@@ -58,3 +58,4 @@ Interview questions already asked or taught, so none repeat. Format: `- <questio
 - Drill: ConcurrentHashMap hit counter with containsKey/get/put loses counts; why, 1-2 fixes (merge, AtomicInteger/LongAdder) with costs? (java, J2) — 2026-11-24 — awaiting grade
 - What causes a React component to re-render? Why doesn't mutating state work? (react, R2) — 2026-11-18
 - When would you use multiple agents instead of one, and what does it cost? (ai, A5) — 2026-11-25
+- Drill: two overlapping async uploads with setFiles([...files, saved]) show only one file; why, fix, and how to keep pick order (trade-off)? (react, R3) — 2026-11-25 — awaiting grade
