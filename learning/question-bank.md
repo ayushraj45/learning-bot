@@ -61,3 +61,4 @@ Interview questions already asked or taught, so none repeat. Format: `- <questio
 - Drill: two overlapping async uploads with setFiles([...files, saved]) show only one file; why, fix, and how to keep pick order (trade-off)? (react, R3) — 2026-11-25 — awaiting grade
 - What is MCP, how is it different from tool calling, and what are the risks? (ai, A6) — 2026-11-26
 - TreeMap vs LinkedHashMap vs PriorityQueue; how would you build an LRU cache or find top K? (java, J2) — 2026-11-26 — taught
+- Why does my useEffect run twice or on every render, and when does cleanup run? (react, R3) — 2026-11-26 — taught

@@ -3,7 +3,7 @@
 ## Pointers
 - 2026-11-18 FOCUS CHANGE: interview in ~2 weeks (AVP backend/frontend: core Java, Spring, React hooks). Data engineering PARKED (see parked/data-engineering.md; his B1-B3 history below stays for reference). Daily: java x2, react x1, ai x1, evening drill (java or react).
 - java: J1 equals/hashCode, String pool, immutable class done. J2 HashMap internals + ConcurrentHashMap vs synchronizedMap done. Fail-fast iterators done. ArrayList vs LinkedList done. TreeMap/LinkedHashMap/PriorityQueue done. Next: J6 Spring IoC/DI (constructor vs field injection); J1 exceptions/generics later.
-- react: R2 re-render triggers + keys/reconciliation done. R3 started: useState updater/stale closures done. Next: useEffect dependencies + cleanup.
+- react: R2 re-render triggers + keys/reconciliation done. R3 started: useState updater/stale closures, useEffect deps + cleanup done. Next: fetch race conditions in useEffect.
 - ai: A1-A4 seen; A5 seen (agent vs workflow, memory, multi-agent; standalone planning lesson trimmed for the sprint). A6 MCP done. Next: A6 harnesses and hooks. One lesson a day.
 
 ## Module levels
@@ -33,7 +33,7 @@ Levels: new | seen | solid | mastered
 ### React and frontend (new 2026-11-18)
 - R1 JS/TS for React: new
 - R2 React fundamentals: seen (re-render triggers)
-- R3 Hooks: seen (useState updater/stale closures)
+- R3 Hooks: seen (useState updater/stale closures, useEffect deps/cleanup)
 - R4 State, data, architecture: new
 - R5 Web fundamentals: new
 - R6 Frontend/full-stack design: new
@@ -88,6 +88,7 @@ Levels: new | seen | solid | mastered
 - SQL coding challenges written (also cohort retention, 11-16): HAVING/aggregation (11-05), top 2 per customer (11-06), month-over-month LAG + running total (11-09), longest login streak / gaps and islands (11-11), latest status per order + dedupe/tiebreak (11-12)
 
 - J2: TreeMap (sorted, compareTo decides key identity, floor/ceiling), LinkedHashMap (insertion/access order, LRU), PriorityQueue (heap, iteration unsorted, top K) — 2026-11-26
+- R3: useEffect deps (Object.is), cleanup order/unmount, object deps rerun every render, Strict Mode double setup — 2026-11-26
 
 ## Drills
 - 2026-11-25 react: overlapping async uploads, setFiles([...files, saved]) loses a file (why, fix, pick-order trade-off) — awaiting grade

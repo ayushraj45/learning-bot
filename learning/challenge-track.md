@@ -31,7 +31,7 @@ Started 2026-11-17. Earlier challenges were SQL (data engineering) and are not p
 Within a pattern, go in NeetCode's order (easy problems first).
 
 ## Pointer
-- Next NeetCode problem: Arrays and hashing #5 (Top K Frequent Elements)
+- Next NeetCode problem: Arrays and hashing #6 (Encode and Decode Strings)
 - Last practical kind set: none yet (Spring Boot from now on)
 - Last React task kind: build (debounced search + race). Next Saturday: a fix-the-buggy-component task
 
@@ -42,6 +42,7 @@ Within a pattern, go in NeetCode's order (easy problems first).
 
 - 2026-11-23 neetcode: 1 Two Sum (Arrays and hashing, Java)
 - 2026-11-24 neetcode: 49 Group Anagrams (Arrays and hashing, Java)
+- 2026-11-26 neetcode: 347 Top K Frequent Elements (Arrays and hashing, Java)
 
 ## Struggled with (set again as a Revisit 3+ days later, then remove)
 Add a problem here if the Q&A logs show Ayush struggled with it, or if he adds it himself.
