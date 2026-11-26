@@ -59,3 +59,4 @@ Interview questions already asked or taught, so none repeat. Format: `- <questio
 - What causes a React component to re-render? Why doesn't mutating state work? (react, R2) — 2026-11-18
 - When would you use multiple agents instead of one, and what does it cost? (ai, A5) — 2026-11-25
 - Drill: two overlapping async uploads with setFiles([...files, saved]) show only one file; why, fix, and how to keep pick order (trade-off)? (react, R3) — 2026-11-25 — awaiting grade
+- What is MCP, how is it different from tool calling, and what are the risks? (ai, A6) — 2026-11-26
