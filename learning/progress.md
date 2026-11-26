@@ -91,6 +91,7 @@ Levels: new | seen | solid | mastered
 - R3: useEffect deps (Object.is), cleanup order/unmount, object deps rerun every render, Strict Mode double setup — 2026-11-26
 
 ## Drills
+- 2026-11-26 java: TreeSet with score-only comparator drops tied player (why, fix, mutable score + update cost) — awaiting grade
 - 2026-11-25 react: overlapping async uploads, setFiles([...files, saved]) loses a file (why, fix, pick-order trade-off) — awaiting grade
 - 2026-11-05 ai: context window overflow — 3/5 (knew causes/fixes, missed trade-offs and reply-token budget)
 - 2026-11-06 data: window AVG OVER vs GROUP BY/CTE — awaiting grade

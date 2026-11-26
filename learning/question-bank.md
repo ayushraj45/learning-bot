@@ -62,3 +62,4 @@ Interview questions already asked or taught, so none repeat. Format: `- <questio
 - What is MCP, how is it different from tool calling, and what are the risks? (ai, A6) — 2026-11-26
 - TreeMap vs LinkedHashMap vs PriorityQueue; how would you build an LRU cache or find top K? (java, J2) — 2026-11-26 — taught
 - Why does my useEffect run twice or on every render, and when does cleanup run? (react, R3) — 2026-11-26 — taught
+- Drill: TreeSet with score-only comparator keeps one of two tied players; why despite equals, fix, and what breaks if score mutates (update cost)? (java, J2) — 2026-11-26 — awaiting grade
