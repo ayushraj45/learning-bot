@@ -60,3 +60,4 @@ Interview questions already asked or taught, so none repeat. Format: `- <questio
 - When would you use multiple agents instead of one, and what does it cost? (ai, A5) — 2026-11-25
 - Drill: two overlapping async uploads with setFiles([...files, saved]) show only one file; why, fix, and how to keep pick order (trade-off)? (react, R3) — 2026-11-25 — awaiting grade
 - What is MCP, how is it different from tool calling, and what are the risks? (ai, A6) — 2026-11-26
+- TreeMap vs LinkedHashMap vs PriorityQueue; how would you build an LRU cache or find top K? (java, J2) — 2026-11-26 — taught

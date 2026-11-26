@@ -2,7 +2,7 @@
 
 ## Pointers
 - 2026-11-18 FOCUS CHANGE: interview in ~2 weeks (AVP backend/frontend: core Java, Spring, React hooks). Data engineering PARKED (see parked/data-engineering.md; his B1-B3 history below stays for reference). Daily: java x2, react x1, ai x1, evening drill (java or react).
-- java: J1 equals/hashCode, String pool, immutable class done. J2 HashMap internals + ConcurrentHashMap vs synchronizedMap done. Fail-fast iterators done. ArrayList vs LinkedList done. Next: TreeMap/LinkedHashMap/PriorityQueue choice; J1 exceptions/generics later.
+- java: J1 equals/hashCode, String pool, immutable class done. J2 HashMap internals + ConcurrentHashMap vs synchronizedMap done. Fail-fast iterators done. ArrayList vs LinkedList done. TreeMap/LinkedHashMap/PriorityQueue done. Next: J6 Spring IoC/DI (constructor vs field injection); J1 exceptions/generics later.
 - react: R2 re-render triggers + keys/reconciliation done. R3 started: useState updater/stale closures done. Next: useEffect dependencies + cleanup.
 - ai: A1-A4 seen; A5 seen (agent vs workflow, memory, multi-agent; standalone planning lesson trimmed for the sprint). A6 MCP done. Next: A6 harnesses and hooks. One lesson a day.
 
@@ -87,6 +87,8 @@ Levels: new | seen | solid | mastered
 - R3: render = snapshot, setCount(count+1) x3 adds 1, updater form c=>c+1, stale timers — 2026-11-24
 - SQL coding challenges written (also cohort retention, 11-16): HAVING/aggregation (11-05), top 2 per customer (11-06), month-over-month LAG + running total (11-09), longest login streak / gaps and islands (11-11), latest status per order + dedupe/tiebreak (11-12)
 
+- J2: TreeMap (sorted, compareTo decides key identity, floor/ceiling), LinkedHashMap (insertion/access order, LRU), PriorityQueue (heap, iteration unsorted, top K) — 2026-11-26
+
 ## Drills
 - 2026-11-25 react: overlapping async uploads, setFiles([...files, saved]) loses a file (why, fix, pick-order trade-off) — awaiting grade
 - 2026-11-05 ai: context window overflow — 3/5 (knew causes/fixes, missed trade-offs and reply-token budget)
@@ -101,5 +103,6 @@ Levels: new | seen | solid | mastered
 - 2026-11-16 data: B2 grain/fan-out, SUM(order_total) doubled after join to items — awaiting grade (next normal lesson still data B2 SCDs)
 
 ## Pacing notes
+- 2026-11-26: Spring (J6) pulled ahead of J3-J5 and the rest of J1: interview is about a week away and no Spring is covered yet. No new questions or reactions in recent logs.
 - 2026-W45: only one drill graded (3/5), so nothing is marked solid. A1 and B1 stay `seen`. Revisit trade-off framing in answers. No curriculum changes.
 - 2026-11-12: second drill 3/5 with same gap (trade-offs). 👍 on lessons 13, 17, 18 (injection, hallucination, indexes) but no 4/5 drill yet, so still `seen`. Lesson 18 👍 → indexes can go deeper later (composite indexes).
