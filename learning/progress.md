@@ -3,7 +3,7 @@
 ## Pointers
 - 2026-11-18 FOCUS CHANGE: interview in ~2 weeks (AVP backend/frontend: core Java, Spring, React hooks). Data engineering PARKED (see parked/data-engineering.md; his B1-B3 history below stays for reference). Daily: java x2, react x1, ai x1, evening drill (java or react).
 - java: J1 equals/hashCode, String pool, immutable class done. J2 HashMap internals + ConcurrentHashMap vs synchronizedMap done. Fail-fast iterators done. ArrayList vs LinkedList done. TreeMap/LinkedHashMap/PriorityQueue done. J6 IoC/DI + constructor injection done. Next: J6 bean scopes and lifecycle; J1 exceptions/generics later.
-- react: R2 re-render triggers + keys/reconciliation done. R3 started: useState updater/stale closures, useEffect deps + cleanup done. Next: fetch race conditions in useEffect.
+- react: R2 re-render triggers + keys/reconciliation done. R3 started: useState updater/stale closures, useEffect deps + cleanup done. Fetch race conditions (abort/ignore flag) done. Next: useRef, then useMemo/useCallback/React.memo.
 - ai: A1-A4 seen; A5 seen (agent vs workflow, memory, multi-agent; standalone planning lesson trimmed for the sprint). A6 MCP, harnesses and hooks done. Next: A7 evals and observability. One lesson a day.
 
 ## Module levels
@@ -33,7 +33,7 @@ Levels: new | seen | solid | mastered
 ### React and frontend (new 2026-11-18)
 - R1 JS/TS for React: new
 - R2 React fundamentals: seen (re-render triggers)
-- R3 Hooks: seen (useState updater/stale closures, useEffect deps/cleanup)
+- R3 Hooks: seen (useState updater/stale closures, useEffect deps/cleanup, fetch races)
 - R4 State, data, architecture: new
 - R5 Web fundamentals: new
 - R6 Frontend/full-stack design: new
@@ -91,6 +91,7 @@ Levels: new | seen | solid | mastered
 - J2: TreeMap (sorted, compareTo decides key identity, floor/ceiling), LinkedHashMap (insertion/access order, LRU), PriorityQueue (heap, iteration unsorted, top K) — 2026-11-26
 - R3: useEffect deps (Object.is), cleanup order/unmount, object deps rerun every render, Strict Mode double setup — 2026-11-26
 - J6: IoC/beans, component scanning, constructor vs field injection, multiple candidates (@Primary/@Qualifier), circular dependencies — 2026-11-27
+- R3: fetch race conditions, AbortController in cleanup, AbortError, ignore flag, abort != server stop — 2026-11-27
 
 ## Drills
 - 2026-11-26 java: TreeSet with score-only comparator drops tied player (why, fix, mutable score + update cost) — awaiting grade
