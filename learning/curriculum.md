@@ -100,4 +100,9 @@ Level to aim at: a mid-senior interviewer asks "why" and "what goes wrong", not 
 ## Cross-cutting
 - Daily interview drill (Java or React) drawn from any covered module.
 - Weak spots from `weak-spots.md` are revisited before moving on.
-- Suggested sprint pacing: J1, J2, R2, R3 first (most commonly asked), then J6, J3, J4, R4, then J5, J7, R5, R6. Reorder using his reactions and drill grades.
+- Reorder using his reactions and drill grades.
+
+**Sprint order for the remaining days (set 2026-11-27, follow this over module numbering; skip covered items):**
+- Java: (1) J6 bean scopes/lifecycle, (2) proxies and `@Transactional` incl. self-invocation, propagation, (3) JPA lazy loading and N+1, (4) REST validation, `@ControllerAdvice`, DTOs, (5) Boot auto-configuration, (6) J4 `synchronized`/`volatile`, `ExecutorService`/`CompletableFuture`, (7) J3 streams, (8) J7 isolation levels, optimistic locking, composite indexes, REST idempotency. Then exceptions/generics, J5, the rest of J1, J6 and J7.
+- React: (1) `useRef`, (2) `useMemo`/`useCallback`/`React.memo`, (3) `useContext` cost and `useReducer`, (4) custom hooks and rules of hooks, (5) Context vs Redux/Zustand, TanStack Query. Then the rest of R4, R5, R6.
+- AI: A7, then A9, then the rest of A8. A10 last.
