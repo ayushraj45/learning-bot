@@ -66,3 +66,4 @@ Interview questions already asked or taught, so none repeat. Format: `- <questio
 - What is an agent harness, and how do you guarantee an agent never does something (hooks vs prompt rules)? (ai, A6) — 2026-11-27 — taught
 - What is IoC/DI in Spring, why constructor over field injection, and what if two beans match or there's a circular dependency? (java, J6) — 2026-11-27 — taught
 - A search/profile page sometimes shows stale results: why, and how do you fix fetch races in useEffect (abort vs ignore flag)? (react, R3) — 2026-11-27 — taught
+- Drill: chat effect with [roomId, theme] reconnects on theme toggle; why, what breaks if theme is removed from deps, how to fix + one cost? (react, R3) — 2026-11-27 — awaiting grade

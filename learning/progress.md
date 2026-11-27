@@ -94,6 +94,7 @@ Levels: new | seen | solid | mastered
 - R3: fetch race conditions, AbortController in cleanup, AbortError, ignore flag, abort != server stop — 2026-11-27
 
 ## Drills
+- 2026-11-27 react: chat reconnects on theme change; removing theme from deps gives stale closure (why, fix + cost) — awaiting grade
 - 2026-11-26 java: TreeSet with score-only comparator drops tied player (why, fix, mutable score + update cost) — awaiting grade
 - 2026-11-25 react: overlapping async uploads, setFiles([...files, saved]) loses a file (why, fix, pick-order trade-off) — awaiting grade
 - 2026-11-05 ai: context window overflow — 3/5 (knew causes/fixes, missed trade-offs and reply-token budget)
